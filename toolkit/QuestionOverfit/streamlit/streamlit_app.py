@@ -7,10 +7,10 @@ import time
 
 
 def sample_questions(show: int=10, difficulty: str = 'easy') -> pd.DataFrame:
-    filtered = st.session_state.data[st.session_state.data['difficulty'] == difficulty]
-    populationQuestionID = sorted(filtered['questionid'].unique())
+    filtered = st.session_state.data[st.session_state.data['DIFFICULTY'] == difficulty]
+    populationQuestionID = sorted(filtered['QUESTIONID'].unique())
     sampledQuestionID = random.sample(populationQuestionID, show)
-    sampledQuestions = filtered[filtered['questionid'].isin(sampledQuestionID)]
+    sampledQuestions = filtered[filtered['QUESTIONID'].isin(sampledQuestionID)]
     return sampledQuestions.to_dict('records')
 
 
@@ -20,27 +20,27 @@ def parse_sampled_question(sampled_question):
     for ID, question in enumerate(sampled_question):
         if tracker % 9 == 0:
             current_id = ID // 9
-            questionID = question["questionid"]
-            sectionID = question["section"]
+            questionID = question["QUESTIONID"]
+            sectionID = question["SECTION"]
 
             if questionID % 10 == 0:
                 subQuestionID = 10
             else:
                 subQuestionID = questionID % 10
 
-            difficulty = question["difficulty"]
-            questionText = question["questiontext"]
+            difficulty = question["DIFFICULTY"]
+            questionText = question["QUESTIONTEXT"]
             parsed[current_id + 1] = {
                 "QuestionID": questionID,
                 "Section": sectionID,
                 "SubQuestionID": subQuestionID,
                 "Difficulty": difficulty,
                 "Question": questionText,
-                "Choices": {question["choicelabel"]: [question["choicetext"], question["iscorrect"]]}            }
+                "Choices": {question["CHOICELABEL"]: [question["CHOICETEXT"], question["ISCORRECT"]]}            }
 
             tracker += 1
         else:
-            parsed[current_id + 1]["Choices"][question["choicelabel"]] = [question["choicetext"], question["iscorrect"]]
+            parsed[current_id + 1]["Choices"][question["CHOICELABEL"]] = [question["CHOICETEXT"], question["ISCORRECT"]]
             tracker += 1
     return parsed
 
@@ -207,8 +207,10 @@ difficulty_mapper = {
             "**Hard** 	:penguin: ": "hard"
         }
 
-conn = st.connection('gre_verbal_db', type='sql')
-data = conn.query('SELECT * FROM questions_choices_answers')
+# conn = st.connection('gre_verbal_db', type='sql')
+conn = st.connection('snowflake')
+data = conn.query('SELECT * FROM QUESTIONS_CHOICES_ANSWERS')
+data['ISCORRECT'] = data['ISCORRECT'].astype(str)
 
 if 'data' not in st.session_state:
     st.session_state.data = data
