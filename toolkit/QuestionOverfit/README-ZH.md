@@ -17,7 +17,7 @@
 ## 2.0 Usage Example
 以下教程将使用包自带的`gre_verbal.db`题库进行主要功能示范
 ```python
-from QuestionOverfit import QuestionOverfit
+from toolkit import QuestionOverfit
 overfit = QuestionOverfit()
 ```
 
