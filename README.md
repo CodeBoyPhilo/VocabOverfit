@@ -27,11 +27,25 @@ VocabCloud的主要应用在于利用Node和Edge的概念，将相同含义的�
 1. 仅背诵单词的含义比较容易忘，且不容易深刻理解
 2. 通过公式化的抽象表达，更能捕捉到单词的底层含义，且对于单词含义的表达更为形象。
 
+## [QuestionOverfit](toolkit/QuestionOverfit/README-ZH.md)
+[`CLI`]((toolkit/QuestionOverfit/README-ZH.md))  [`Streamlit`](streamlit/QuestionOverfit/README.md)
+
+**Intro**
+
+从题库中随机抽取题目进行练习、刷题。我将这个过程戏称为“题库过拟合”。
+当前有两个版本可供使用：
+1. toolkit包内自带的QuestionOverfit API，可基于命令行使用
+2. 部署在Streamlit Community Cloud的网页版
+
+**Motivation**
+1. 目前刷题的方式偏于传统，只使用了PDF题库与答案，与正式考试方式大相径庭，毫无沉浸感
+2. 尚未找到一款GRE相关的刷题备考软件
+3. 结合这两点，我使用手头上的题库与答案作为基础，做出了QuestionOverfit
+
 # 2.0 开发计划
 
 1. 完善VocabCloud
-2. QuestionOverfit
-    - 根据输入单词快速查找相关的真题
+2. 完善QuestionOverfit
 3. MockGRE
    - 基于大语言模型，生成类似真题的practice questions
    - 基于大语言模型，根据输入单词，生成一段包含这些单词的短文，以帮助单词背诵理解
