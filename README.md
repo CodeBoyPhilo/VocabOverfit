@@ -32,7 +32,7 @@ Inspired by the famous "Queen = King + Woman - Man" analogy, Vocab2Math aims to 
 2. The formulaic abstract expression captures the underlying meanings of words more effectively, providing a more vivid expression of word meanings.
 
 ## [QuestionOverfit](toolkit/QuestionOverfit/README.md)
-[`CLI`]((toolkit/QuestionOverfit/README.md))  [`Streamlit`](streamlit/QuestionOverfit/README.md)
+[`CLI`](toolkit/QuestionOverfit/README.md)  [`Streamlit`](streamlit/QuestionOverfit/README.md)
 
 
 **Introduction**
