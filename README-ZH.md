@@ -28,7 +28,7 @@ VocabCloud的主要应用在于利用Node和Edge的概念，将相同含义的�
 2. 通过公式化的抽象表达，更能捕捉到单词的底层含义，且对于单词含义的表达更为形象。
 
 ## [QuestionOverfit](toolkit/QuestionOverfit/README-ZH.md)
-[`CLI`]((toolkit/QuestionOverfit/README-ZH.md))  [`Streamlit`](streamlit/QuestionOverfit/README.md)
+[`CLI`](toolkit/QuestionOverfit/README-ZH.md)  [`Streamlit`](streamlit/QuestionOverfit/README.md)
 
 **Intro**
 
