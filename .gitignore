@@ -1,1 +1,4 @@
 /streamlit/QuestionOverfit/.streamlit/secrets.toml
+/streamlit/QuestionQuery/.streamlit/secrets.toml
+.idea
+pyrightconfig.json
