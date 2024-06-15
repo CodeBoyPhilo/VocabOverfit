@@ -2,3 +2,4 @@
 /streamlit/QuestionQuery/.streamlit/secrets.toml
 .idea
 pyrightconfig.json
+streamlit/VocabQuery/.streamlit/secrets.toml
