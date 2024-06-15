@@ -239,7 +239,7 @@ difficulty_mapper = {
 
 conn = st.connection("gre_verbal_db", type="sql")
 # conn = st.connection('snowflake')
-data = conn.query("SELECT * FROM QUESTIONS_CHOICES_ANSWERS")
+data = conn.query("SELECT * FROM verbal.QUESTIONS_CHOICES_ANSWERS")
 data.columns = data.columns.str.upper()
 data["ISCORRECT"] = data["ISCORRECT"].astype(str)
 
