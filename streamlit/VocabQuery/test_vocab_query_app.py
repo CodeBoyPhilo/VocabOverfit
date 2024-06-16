@@ -6,12 +6,17 @@ import streamlit as st
 def start_revise(current_vocab: DataFrame):
 
     vocabulary = current_vocab["vocabulary"]
-    ch_meaning = current_vocab["ch_meaning"].split("；")  # Chinese semicolon
-    en_meaning = current_vocab["en_meaning"].split("; ")  # English semicolon
-    equation_1 = current_vocab["equation_1"]
-    equation_2 = current_vocab["equation_2"]
+    equation_1 = current_vocab["equation_1"].split("=")[-1]
+    equation_2 = current_vocab["equation_2"].split("=")[-1]
 
     st.markdown(f"## {vocabulary}")
+    st.markdown(f"##### = {equation_1}")
+    st.markdown(f"##### = {equation_2}")
+
+
+def show_definition(current_vocab: DataFrame):
+    ch_meaning = current_vocab["ch_meaning"].split("；")  # Chinese semicolon
+    en_meaning = current_vocab["en_meaning"].split("; ")  # English semicolon
     st.markdown("**Definition:**")
     for ch, en in zip(ch_meaning, en_meaning):
         meaning = f"""
@@ -19,8 +24,6 @@ def start_revise(current_vocab: DataFrame):
                 {en.split('.')[-1]}
         """
         st.markdown(meaning)
-    st.markdown(f"##### {equation_1}")
-    st.markdown(f"##### {equation_2}")
 
 
 # ==============================
@@ -36,6 +39,8 @@ if "vocab_list" not in st.session_state:
     st.session_state.vocab_list = None
 if "list_data" not in st.session_state:
     st.session_state.list_data = None
+if "current_vocab" not in st.session_state:
+    st.session_state.current_vocab = None
 # ==============================
 # MAIN APP EXECUTION STARTS HERE
 # ==============================
@@ -60,17 +65,38 @@ else:
     pass
 
 
-if st.session_state.start:
-    st.session_state.start = False
-    current_vocab = st.session_state.list_data.iloc[st.session_state.cur_q_idx, :]
-    start_revise(current_vocab)
+# if st.session_state.start:
+#    st.session_state.start = False
+#    st.session_state.current_vocab = st.session_state.list_data.iloc[st.session_state.cur_q_idx, :]
+#    start_revise(st.session_state.current_vocab)
+#    click_show_definition = st.button("show definition", type="secondary")
+#    if click_show_definition:
+#        show_definition(st.session_state.current_vocab)
 
 left, right = st.columns(2)
 if left.button("Previous", key="Previous", type="primary", use_container_width=True):
     st.session_state.cur_q_idx -= 1
-    current_vocab = st.session_state.list_data.iloc[st.session_state.cur_q_idx, :]
-    start_revise(current_vocab)
+#    st.session_state.current_vocab = st.session_state.list_data.iloc[
+#        st.session_state.cur_q_idx, :
+#    ]
+#    start_revise(st.session_state.current_vocab)
+#    click_show_definition = st.button("show definition", type="secondary")
+#    if click_show_definition:
+#        show_definition(st.session_state.current_vocab)
 if right.button("Next", key="Next", type="primary", use_container_width=True):
     st.session_state.cur_q_idx += 1
-    current_vocab = st.session_state.list_data.iloc[st.session_state.cur_q_idx, :]
-    start_revise(current_vocab)
+    #    st.session_state.current_vocab = st.session_state.list_data.iloc[
+    #        st.session_state.cur_q_idx, :
+    #    ]
+    #    start_revise(st.session_state.current_vocab)
+    #    click_show_definition = st.button("show definition", type="secondary")
+    #    if click_show_definition:
+    #        show_definition(st.session_state.current_vocab)
+
+st.session_state.current_vocab = st.session_state.list_data.iloc[
+    st.session_state.cur_q_idx, :
+]
+start_revise(st.session_state.current_vocab)
+click_show_definition = st.button("show definition", type="secondary")
+if click_show_definition:
+    show_definition(st.session_state.current_vocab)
