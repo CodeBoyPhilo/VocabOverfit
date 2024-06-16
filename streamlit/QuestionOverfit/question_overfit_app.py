@@ -1,3 +1,4 @@
+import json
 import os
 import random
 import time
@@ -157,6 +158,7 @@ def check_answer(parsed):
                         :green[**Correct - {label}: {text}**]
                         """
                         st.write(text)
+                    st.session_state.history[parsed["QuestionID"]] = "True"
                 else:
                     with cols[idx]:
                         text = f"""
@@ -164,6 +166,7 @@ def check_answer(parsed):
                         :green[**Correct - {label}: {text}**]
                         """
                         st.write(text)
+                    st.session_state.history[parsed["QuestionID"]] = "False"
         st.session_state.finished_check = True
 
 
@@ -229,6 +232,8 @@ def show_batch_summary():
     st.markdown(text1)
     show_metric()
     st.session_state.not_show_summary = True
+    with open("philo/history.json", "w") as file:
+        json.dump(st.session_state.history, file)
 
 
 difficulty_mapper = {
@@ -243,7 +248,11 @@ data = conn.query("SELECT * FROM verbal.QUESTIONS_CHOICES_ANSWERS")
 data.columns = data.columns.str.upper()
 data["ISCORRECT"] = data["ISCORRECT"].astype(str)
 
+if "history" not in st.session_state:
+    with open("philo/history.json", "r") as file:
+        st.session_state.history = json.load(file)
 if "data" not in st.session_state:
+    data = data[~data["QUESTIONID"].isin(st.session_state.history.keys())]
     st.session_state.data = data
 if "show" not in st.session_state:
     st.session_state.show = None
@@ -340,6 +349,7 @@ try:
 
     else:
         show_batch_summary()
+        # BUG: when the user fits one batch and immediately wants to fit another batch, it fails to properly do so. The slider will update the question shown, and the first question fails to be checked.
 
 
 except AttributeError:
