@@ -26,7 +26,7 @@ def show_definition(current_vocab: DataFrame):
         pattern = r"\d+\.\s*([^;]+)(?:;|\s|$)"
         en_meaning = re.findall(pattern, en_meaning_full)
 
-    st.markdown("**Definition:**")
+    # st.markdown("**Definition:**")
     for ch, en in zip(ch_meaning, en_meaning):
 
         meaning = f"""
@@ -62,7 +62,9 @@ if "current_vocab" not in session:
 # MAIN APP EXECUTION STARTS HERE
 # ==============================
 st.sidebar.markdown("# Select Vocabulary list:")
-session.vocab_list = st.sidebar.selectbox("", [f"list{i}" for i in range(1, 33)])
+session.vocab_list = st.sidebar.selectbox(
+    "dummy label", [f"list{i}" for i in range(1, 33)], label_visibility="hidden"
+)
 session.always_show_def = st.sidebar.radio(
     "**Vocabulary Definition**", ["Show", "Hide"]
 )
@@ -74,6 +76,7 @@ if "data" not in session:
 
 if session.vocab_list is not None:
     session.list_data = session.data[session.data["list"] == session.vocab_list]
+    session.n_vocab = session.list_data.shape[0]
 
     if session.vocab_list != session.prev_vocab_list:
         session.prev_vocab_list = session.vocab_list
@@ -90,19 +93,24 @@ if left.button("Previous", key="Previous", type="primary", use_container_width=T
     session.cur_q_idx -= 1
 
 if right.button("Next", key="Next", type="primary", use_container_width=True):
+    if session.cur_q_idx + 1 > session.n_vocab:
+        session.cur_q_idx = session.n_vocab - 1
     session.cur_q_idx += 1
 
-if session.cur_q_idx + 1 > session.list_data.shape[0]:
+if session.cur_q_idx + 1 > session.n_vocab:
     show_exit_message()
 else:
+    left, right = st.columns(2)
     session.current_vocab = session.list_data.iloc[session.cur_q_idx, :]
-    start_revise(session.current_vocab)
-
-    if session.always_show_def == "Show":
-        show_definition(session.current_vocab)
-    else:
-        click_show_definition = st.button("show definition", type="secondary")
-        if click_show_definition:
+    with left:
+        start_revise(session.current_vocab)
+    with right:
+        st.markdown("##")  # placeholder for visual enhancements
+        if session.always_show_def == "Show":
             show_definition(session.current_vocab)
+        else:
+            click_show_definition = st.button("show definition", type="secondary")
+            if click_show_definition:
+                show_definition(session.current_vocab)
 
-    st.markdown(f"#### Progress: {session.cur_q_idx+1} / {session.list_data.shape[0]}")
+    st.markdown(f"#### Progress: {session.cur_q_idx+1} / {session.n_vocab}")
