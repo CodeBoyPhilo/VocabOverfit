@@ -36,6 +36,11 @@ def show_definition(current_vocab: DataFrame):
         st.markdown(meaning)
 
 
+def show_exit_message():
+    st.balloons()
+    st.markdown("### You have finished this list! Congrats!")
+
+
 # ==============================
 # DEFINE SESSION STATES
 # ==============================
@@ -87,13 +92,17 @@ if left.button("Previous", key="Previous", type="primary", use_container_width=T
 if right.button("Next", key="Next", type="primary", use_container_width=True):
     session.cur_q_idx += 1
 
-session.current_vocab = session.list_data.iloc[session.cur_q_idx, :]
-st.write(session.cur_q_idx)
-start_revise(session.current_vocab)
-
-if session.always_show_def == "Show":
-    show_definition(session.current_vocab)
+if session.cur_q_idx + 1 > session.list_data.shape[0]:
+    show_exit_message()
 else:
-    click_show_definition = st.button("show definition", type="secondary")
-    if click_show_definition:
+    session.current_vocab = session.list_data.iloc[session.cur_q_idx, :]
+    start_revise(session.current_vocab)
+
+    if session.always_show_def == "Show":
         show_definition(session.current_vocab)
+    else:
+        click_show_definition = st.button("show definition", type="secondary")
+        if click_show_definition:
+            show_definition(session.current_vocab)
+
+    st.markdown(f"#### Progress: {session.cur_q_idx+1} / {session.list_data.shape[0]}")
