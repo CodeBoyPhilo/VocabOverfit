@@ -58,6 +58,9 @@ if "current_vocab" not in session:
 # ==============================
 st.sidebar.markdown("# Select Vocabulary list:")
 session.vocab_list = st.sidebar.selectbox("", [f"list{i}" for i in range(1, 33)])
+session.always_show_def = st.sidebar.radio(
+    "**Vocabulary Definition**", ["Show", "Hide"]
+)
 
 conn = st.connection("gre_vocabulary_db", type="sql")
 data = conn.query("SELECT * FROM vocabulary.gre_3000 WHERE equation_1 IS NOT NULL")
@@ -87,10 +90,10 @@ if right.button("Next", key="Next", type="primary", use_container_width=True):
 session.current_vocab = session.list_data.iloc[session.cur_q_idx, :]
 st.write(session.cur_q_idx)
 start_revise(session.current_vocab)
-click_show_definition = st.button("show definition", type="secondary")
 
-if True:
+if session.always_show_def == "Show":
     show_definition(session.current_vocab)
-# TODO: delete above
-# if click_show_definition:
-#     show_definition(session.current_vocab)
+else:
+    click_show_definition = st.button("show definition", type="secondary")
+    if click_show_definition:
+        show_definition(session.current_vocab)
