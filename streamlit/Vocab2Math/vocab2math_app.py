@@ -1,4 +1,5 @@
 import re
+from pathlib import Path
 
 import pandas as pd
 from pandas import DataFrame
@@ -67,6 +68,12 @@ def show_exit_message():
 
 
 # ==============================
+# CONSTANT VARIABLES
+# ==============================
+SCRIPT_DIR = Path(__file__).parent
+DATA_DIR = SCRIPT_DIR / "gre_3000.csv"
+
+# ==============================
 # DEFINE SESSION STATES
 # ==============================
 if "cur_q_idx" not in session:
@@ -83,6 +90,7 @@ if "list_data" not in session:
     session.list_data = None
 if "current_vocab" not in session:
     session.current_vocab = None
+
 # ==============================
 # MAIN APP EXECUTION STARTS HERE
 # ==============================
@@ -101,7 +109,9 @@ session.always_show_def = st.radio("**Vocabulary Definition**", ["Show", "Hide"]
 # Load data
 # conn = st.connection("gre_vocabulary_db", type="sql")
 # data = conn.query("SELECT * FROM vocabulary.gre_3000 WHERE equation_1 IS NOT NULL")
-data = pd.read_csv("gre_3000.csv")
+
+
+data = pd.read_csv(DATA_DIR)
 if "data" not in session:
     session.data = data
 
