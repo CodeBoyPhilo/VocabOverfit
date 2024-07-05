@@ -7,6 +7,30 @@ import streamlit as st
 from streamlit import session_state as session
 
 
+def show_greeting_message():
+    html_content = """
+    # <a href="#"><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px" height="25px"></a> Welcome to Vocab2Math!
+    """
+    acknowledgement = """
+    ## 	:bulb: Acknowledgement
+    The vocabulary details are adapted from [liurui39660/3000](https://github.com/liurui39660/3000) and 张巍老师GRE.
+    """
+
+    how_to_use = """
+    ## 	:package: How to use?
+    1. Select a vocabulary list!
+    2. Start learning!
+    3. Finished? Select a new list! 
+    """
+
+    st.sidebar.markdown(html_content, unsafe_allow_html=True)
+    st.sidebar.markdown("")
+    st.sidebar.markdown("Author: [CodeBoyPhilo](https://github.com/CodeBoyPhilo)")
+    st.sidebar.divider()
+    st.sidebar.markdown(acknowledgement)
+    st.sidebar.markdown(how_to_use)
+
+
 def start_revise(current_vocab: DataFrame):
 
     vocabulary = current_vocab["vocabulary"]
@@ -62,14 +86,19 @@ if "current_vocab" not in session:
 # ==============================
 # MAIN APP EXECUTION STARTS HERE
 # ==============================
-st.sidebar.markdown("# Select Vocabulary list:")
-session.vocab_list = st.sidebar.selectbox(
-    "dummy label", [f"list{i}" for i in range(1, 33)], label_visibility="hidden"
-)
-session.always_show_def = st.sidebar.radio(
-    "**Vocabulary Definition**", ["Show", "Hide"]
-)
 
+# -------Sidebar Element-------
+show_greeting_message()
+# st.markdown("# Select Vocabulary list:")
+session.vocab_list = st.selectbox(
+    "Select a vocabulary list",
+    [f"list{i}" for i in range(1, 33)],
+    label_visibility="visible",
+)
+session.always_show_def = st.radio("**Vocabulary Definition**", ["Show", "Hide"])
+
+
+# Load data
 # conn = st.connection("gre_vocabulary_db", type="sql")
 # data = conn.query("SELECT * FROM vocabulary.gre_3000 WHERE equation_1 IS NOT NULL")
 data = pd.read_csv("gre_3000.csv")
@@ -84,12 +113,14 @@ if session.vocab_list is not None:
         session.prev_vocab_list = session.vocab_list
         session.cur_q_idx = 0
 
+# Shuffle the vocabularies
 if session.init_sample:
     session.data = session.data.sample(frac=1).reset_index(drop=True)
     session.init_sample = False
 else:
     pass
 
+# Previous and Next button
 left, right = st.columns(2)
 if left.button("Previous", key="Previous", type="primary", use_container_width=True):
     session.cur_q_idx -= 1
@@ -100,6 +131,7 @@ if right.button("Next", key="Next", type="primary", use_container_width=True):
         session.cur_q_idx = session.n_vocab - 1
     session.cur_q_idx += 1
 
+# Start revising
 if session.cur_q_idx + 1 > session.n_vocab:
     show_exit_message()
 else:
