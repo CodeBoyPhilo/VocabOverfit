@@ -1,5 +1,6 @@
 import re
 
+import pandas as pd
 from pandas import DataFrame
 
 import streamlit as st
@@ -69,8 +70,9 @@ session.always_show_def = st.sidebar.radio(
     "**Vocabulary Definition**", ["Show", "Hide"]
 )
 
-conn = st.connection("gre_vocabulary_db", type="sql")
-data = conn.query("SELECT * FROM vocabulary.gre_3000 WHERE equation_1 IS NOT NULL")
+# conn = st.connection("gre_vocabulary_db", type="sql")
+# data = conn.query("SELECT * FROM vocabulary.gre_3000 WHERE equation_1 IS NOT NULL")
+data = pd.read_csv("gre_3000.csv")
 if "data" not in session:
     session.data = data
 
@@ -93,6 +95,7 @@ if left.button("Previous", key="Previous", type="primary", use_container_width=T
     session.cur_q_idx -= 1
 
 if right.button("Next", key="Next", type="primary", use_container_width=True):
+    # to ensure that the user can hit Previous once to return to the last vocabulary
     if session.cur_q_idx + 1 > session.n_vocab:
         session.cur_q_idx = session.n_vocab - 1
     session.cur_q_idx += 1
