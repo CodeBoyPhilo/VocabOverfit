@@ -33,6 +33,7 @@ def show_greeting_message():
 
 
 def start_revise(current_vocab: DataFrame):
+    st.write(session.cur_q_idx)
 
     vocabulary = current_vocab["vocabulary"]
     equation_1 = current_vocab["equation_1"].split("=")[-1]
@@ -90,19 +91,19 @@ if "list_data" not in session:
     session.list_data = None
 if "current_vocab" not in session:
     session.current_vocab = None
-
 # ==============================
 # MAIN APP EXECUTION STARTS HERE
 # ==============================
 
 # -------Sidebar Element-------
 show_greeting_message()
-# st.markdown("# Select Vocabulary list:")
 session.vocab_list = st.selectbox(
-    "Select a vocabulary list",
+    "**Select a vocabulary list**",
     [f"list{i}" for i in range(1, 33)],
     label_visibility="visible",
 )
+
+left, right = st.columns(2)
 session.always_show_def = st.radio("**Vocabulary Definition**", ["Show", "Hide"])
 
 
@@ -110,10 +111,12 @@ session.always_show_def = st.radio("**Vocabulary Definition**", ["Show", "Hide"]
 # conn = st.connection("gre_vocabulary_db", type="sql")
 # data = conn.query("SELECT * FROM vocabulary.gre_3000 WHERE equation_1 IS NOT NULL")
 
-
 data = pd.read_csv(DATA_DIR)
 if "data" not in session:
     session.data = data
+if st.sidebar.button("Shuffle the order"):
+    session.data = session.data.sample(frac=1).reset_index(drop=True)
+    session.cur_q_idx = 0
 
 if session.vocab_list is not None:
     session.list_data = session.data[session.data["list"] == session.vocab_list]
@@ -122,13 +125,6 @@ if session.vocab_list is not None:
     if session.vocab_list != session.prev_vocab_list:
         session.prev_vocab_list = session.vocab_list
         session.cur_q_idx = 0
-
-# Shuffle the vocabularies
-if session.init_sample:
-    session.data = session.data.sample(frac=1).reset_index(drop=True)
-    session.init_sample = False
-else:
-    pass
 
 # Previous and Next button
 left, right = st.columns(2)
