@@ -33,8 +33,6 @@ def show_greeting_message():
 
 
 def start_revise(current_vocab: DataFrame):
-    st.write(session.cur_q_idx)
-
     vocabulary = current_vocab["vocabulary"]
     equation_1 = current_vocab["equation_1"].split("=")[-1]
     equation_2 = current_vocab["equation_2"].split("=")[-1]
@@ -79,10 +77,6 @@ DATA_DIR = SCRIPT_DIR / "gre_3000.csv"
 # ==============================
 if "cur_q_idx" not in session:
     session.cur_q_idx = 0
-if "init_sample" not in session:
-    session.init_sample = True
-if "start" not in session:
-    session.start = True
 if "prev_vocab_list" not in session:
     session.prev_vocab_list = "list1"
 if "vocab_list" not in session:
