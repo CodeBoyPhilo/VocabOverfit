@@ -134,6 +134,8 @@ else:
 left, right = st.columns(2)
 if left.button("Previous", key="Previous", type="primary", use_container_width=True):
     session.cur_q_idx -= 1
+    if session.cur_q_idx < 0:
+        session.cur_q_idx = 0
 
 if right.button("Next", key="Next", type="primary", use_container_width=True):
     # to ensure that the user can hit Previous once to return to the last vocabulary
