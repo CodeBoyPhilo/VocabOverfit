@@ -14,7 +14,7 @@ def show_greeting_message():
     """
     acknowledgement = """
     ## 	:bulb: Acknowledgement
-    The vocabulary details are adapted from [liurui39660/3000](https://github.com/liurui39660/3000) and 张巍老师GRE.
+    The vocabulary details are adapted from [**liurui39660/3000**](https://github.com/liurui39660/3000) and **张巍老师GRE**.
     """
 
     how_to_use = """
@@ -108,7 +108,7 @@ session.always_show_def = st.radio("**Vocabulary Definition**", ["Show", "Hide"]
 data = pd.read_csv(DATA_DIR)
 if "data" not in session:
     session.data = data
-if st.sidebar.button("Shuffle the order"):
+if st.sidebar.button("Shuffle the order", type="primary"):
     session.data = session.data.sample(frac=1).reset_index(drop=True)
     session.cur_q_idx = 0
 
@@ -122,12 +122,12 @@ if session.vocab_list is not None:
 
 # Previous and Next button
 left, right = st.columns(2)
-if left.button("Previous", key="Previous", type="primary", use_container_width=True):
+if left.button("Previous", key="Previous", type="secondary", use_container_width=True):
     session.cur_q_idx -= 1
     if session.cur_q_idx < 0:
         session.cur_q_idx = 0
 
-if right.button("Next", key="Next", type="primary", use_container_width=True):
+if right.button("Next", key="Next", type="secondary", use_container_width=True):
     # to ensure that the user can hit Previous once to return to the last vocabulary
     if session.cur_q_idx + 1 > session.n_vocab:
         session.cur_q_idx = session.n_vocab - 1
