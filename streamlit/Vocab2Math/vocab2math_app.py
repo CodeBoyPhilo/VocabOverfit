@@ -142,10 +142,11 @@ else:
     with left:
         start_revise(session.current_vocab)
     with right:
-        st.markdown("##")  # placeholder for visual enhancements
         if session.always_show_def == "Show":
+            st.markdown("##")  # placeholder for visual enhancements
             show_definition(session.current_vocab)
         else:
+            st.markdown("")  # placeholder for visual enhancements
             click_show_definition = st.button("show definition", type="secondary")
             if click_show_definition:
                 show_definition(session.current_vocab)
