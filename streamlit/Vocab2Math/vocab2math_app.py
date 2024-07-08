@@ -75,8 +75,8 @@ DATA_DIR = SCRIPT_DIR / "gre_3000.csv"
 # ==============================
 # DEFINE SESSION STATES
 # ==============================
-if "cur_q_idx" not in session:
-    session.cur_q_idx = 0
+if "cur_v_idx" not in session:
+    session.cur_v_idx = 0
 if "prev_vocab_list" not in session:
     session.prev_vocab_list = "list1"
 if "vocab_list" not in session:
@@ -110,7 +110,7 @@ if "data" not in session:
     session.data = data
 if st.sidebar.button("Shuffle the order", type="primary"):
     session.data = session.data.sample(frac=1).reset_index(drop=True)
-    session.cur_q_idx = 0
+    session.cur_v_idx = 0
 
 if session.vocab_list is not None:
     session.list_data = session.data[session.data["list"] == session.vocab_list]
@@ -118,27 +118,27 @@ if session.vocab_list is not None:
 
     if session.vocab_list != session.prev_vocab_list:
         session.prev_vocab_list = session.vocab_list
-        session.cur_q_idx = 0
+        session.cur_v_idx = 0
 
 # Previous and Next button
 left, right = st.columns(2)
 if left.button("Previous", key="Previous", type="secondary", use_container_width=True):
-    session.cur_q_idx -= 1
-    if session.cur_q_idx < 0:
-        session.cur_q_idx = 0
+    session.cur_v_idx -= 1
+    if session.cur_v_idx < 0:
+        session.cur_v_idx = 0
 
 if right.button("Next", key="Next", type="secondary", use_container_width=True):
     # to ensure that the user can hit Previous once to return to the last vocabulary
-    if session.cur_q_idx + 1 > session.n_vocab:
-        session.cur_q_idx = session.n_vocab - 1
-    session.cur_q_idx += 1
+    if session.cur_v_idx + 1 > session.n_vocab:
+        session.cur_v_idx = session.n_vocab - 1
+    session.cur_v_idx += 1
 
 # Start revising
-if session.cur_q_idx + 1 > session.n_vocab:
+if session.cur_v_idx + 1 > session.n_vocab:
     show_exit_message()
 else:
     left, right = st.columns(2)
-    session.current_vocab = session.list_data.iloc[session.cur_q_idx, :]
+    session.current_vocab = session.list_data.iloc[session.cur_v_idx, :]
     with left:
         start_revise(session.current_vocab)
     with right:
@@ -151,4 +151,4 @@ else:
             if click_show_definition:
                 show_definition(session.current_vocab)
 
-    st.markdown(f"#### Progress: {session.cur_q_idx+1} / {session.n_vocab}")
+    st.markdown(f"#### Progress: {session.cur_v_idx+1} / {session.n_vocab}")
