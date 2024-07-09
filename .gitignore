@@ -7,10 +7,5 @@ streamlit/QuestionOverfit/philo
 streamlit/QuestionOverfit/.DS_Store
 streamlit/.DS_Store
 .DS_Store
-streamlit/VocabQuery/.ipynb_checkpoints
-streamlit/VocabQuery/add_vocab_equations.ipynb
-streamlit/Vocab2Math/add_vocab_equations.ipynb
-streamlit/Vocab2Math/.ipynb_checkpoints
-streamlit/Vocab2Math/.streamlit/secrets.toml
 streamlit/VocabOverfit/.ipynb_checkpoints
 streamlit/VocabOverfit/add_vocab_equations.ipynb
