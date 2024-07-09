@@ -8,28 +8,9 @@ import streamlit as st
 from streamlit import session_state as session
 
 
-def show_greeting_message():
-    html_content = """
-    # <a href="#"><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px" height="25px"></a> Welcome to Vocab2Math!
-    """
-    acknowledgement = """
-    ## 	:bulb: Acknowledgement
-    The vocabulary details are adapted from [**liurui39660/3000**](https://github.com/liurui39660/3000) and **张巍老师GRE**.
-    """
-
-    how_to_use = """
-    ## 	:package: How to use?
-    1. Select a vocabulary list!
-    2. Start learning!
-    3. Finished? Select a new list! 
-    """
-
-    st.sidebar.markdown(html_content, unsafe_allow_html=True)
-    st.sidebar.markdown("")
-    st.sidebar.markdown("Author: [CodeBoyPhilo](https://github.com/CodeBoyPhilo)")
-    st.sidebar.divider()
-    st.sidebar.markdown(acknowledgement)
-    st.sidebar.markdown(how_to_use)
+def query(vocab):
+    start_revise(vocab)
+    show_definition(vocab)
 
 
 def start_revise(current_vocab: DataFrame):
@@ -90,16 +71,15 @@ if "current_vocab" not in session:
 # ==============================
 
 # -------Sidebar Element-------
-show_greeting_message()
-session.vocab_list = st.selectbox(
+session.vocab_list = st.sidebar.selectbox(
     "**Select a vocabulary list**",
     [f"list{i}" for i in range(1, 33)],
     label_visibility="visible",
 )
 
-left, right = st.columns(2)
-session.always_show_def = st.radio("**Vocabulary Definition**", ["Show", "Hide"])
-
+session.always_show_def = st.sidebar.radio(
+    "**Vocabulary Definition**", ["show", "hide"]
+)
 
 # Load data
 # conn = st.connection("gre_vocabulary_db", type="sql")
@@ -142,7 +122,7 @@ else:
     with left:
         start_revise(session.current_vocab)
     with right:
-        if session.always_show_def == "Show":
+        if session.always_show_def == "show":
             st.markdown("##")  # placeholder for visual enhancements
             show_definition(session.current_vocab)
         else:
