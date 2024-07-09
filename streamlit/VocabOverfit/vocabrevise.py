@@ -109,7 +109,9 @@ data = pd.read_csv(DATA_DIR)
 data = data[data["list"].isnull() == False]
 if "data" not in session:
     session.data = data
-    session.data = session.data.sample(frac=1).reset_index(drop=True)
+    session.data = session.data.sample(frac=1).reset_index(
+        drop=True
+    )  # shuffle the vocabularies by default
 
 if session.vocab_list is not None:
     session.list_data = session.data[session.data["list"] == session.vocab_list]
