@@ -75,6 +75,19 @@ def show_metric():
         return st.metric("Accuracy", value=f"{value}%", delta=f"{delta}%")
 
 
+def show_exit_message():
+    st.balloons()
+
+    if session.correct_rate_tracker[-1] >= 80:
+        st.header(":trophy: Fantastic! You are ready to be deployed!")
+
+    elif session.correct_rate_tracker[-1] >= 50:
+        st.header("	:mortar_board: Maybe study the list again?")
+    else:
+        st.header(":sweat_smile: Ehh! You should seriously study the list again!")
+    show_metric()
+
+
 # ==============================
 # CONSTANT VARIABLES
 # ==============================
@@ -152,8 +165,7 @@ if session.start:
 
     # Start revising
     if session.cur_v_idx + 1 > session.n_vocab:
-        # TODO: show metric
-        pass
+        show_exit_message()
     else:
         session.current_vocab = session.list_data.iloc[session.cur_v_idx, :]
         if session.prev_q_idx != session.cur_v_idx:
