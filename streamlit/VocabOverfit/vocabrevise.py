@@ -43,7 +43,7 @@ def show_question():
     with right:
         show_metric()
 
-    if st.button("Submit", type="primary"):
+    if st.button("Submit", type="primary", use_container_width=True):
         session.n_finished += 1
 
         if session.selected == session.correct_opt:
