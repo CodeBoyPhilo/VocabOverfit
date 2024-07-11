@@ -155,7 +155,7 @@ if session.vocab_list is not None:
 
     if session.vocab_list != session.prev_vocab_list:
         session.prev_vocab_list = session.vocab_list
-        session.cur_v_idx = 1
+        session.cur_v_idx = 0
 
 # Previous and Next button
 left, right = st.columns(2)
