@@ -139,6 +139,7 @@ session.always_show_def = st.sidebar.radio(
 # data = conn.query("SELECT * FROM vocabulary.gre_3000 WHERE equation_1 IS NOT NULL")
 
 data = pd.read_csv(DATA_DIR)
+data = data[data["list"].isnull() == False]
 if "data" not in session:
     session.data = data
 
