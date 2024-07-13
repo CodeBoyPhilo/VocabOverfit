@@ -20,8 +20,11 @@ def show_greeting_message():
 
     how_to_use = """
     ## 	:package: How to use?
-    1. Select a vocabulary list to study!
-    2. Finished? Select a new list! 
+    1. Select `study` mode first 
+    2. Try to memorise the Chinese definition of the word make sense of the vocab equations 
+    3. Select `revise` mode next
+    4. Try to recall the Chinese definition of the word
+    5. Use the vocab equations as hints!
     """
 
     st.sidebar.markdown(html_content, unsafe_allow_html=True)
@@ -64,12 +67,17 @@ def query(query_vocab):
             st.sidebar.warning("Vocab not found!", icon="⚠️")
 
 
-def start_revise(current_vocab: DataFrame):
+def show_vocab(current_vocab: DataFrame):
     vocabulary = current_vocab["vocabulary"]
+
+    st.markdown(f"## {vocabulary}")
+
+
+def show_equation(current_vocab: DataFrame):
     equation_1 = current_vocab["equation_1"].split("=")[-1]
     equation_2 = current_vocab["equation_2"].split("=")[-1]
 
-    st.markdown(f"## {vocabulary}")
+    st.markdown("## ")  # placeholder for visual enhancements
     st.markdown(f"##### = {equation_1}")
     st.markdown(f"##### = {equation_2}")
 
@@ -130,9 +138,7 @@ session.vocab_list = st.sidebar.selectbox(
     label_visibility="visible",
 )
 
-session.always_show_def = st.sidebar.radio(
-    "**Vocabulary Definition**", ["show", "hide"]
-)
+session.mode = st.sidebar.radio("**Mode**", ["study", "revise"])
 
 # Load data
 # conn = st.connection("gre_vocabulary_db", type="sql")
@@ -161,11 +167,13 @@ if session.vocab_list is not None:
 # Previous and Next button
 left, right = st.columns(2)
 if left.button("Previous", key="Previous", type="secondary", use_container_width=True):
+    # display_show_def_button()
     session.cur_v_idx -= 1
     if session.cur_v_idx < 0:
         session.cur_v_idx = 0
 
 if right.button("Next", key="Next", type="secondary", use_container_width=True):
+    # display_show_def_button()
     # to ensure that the user can hit Previous once to return to the last vocabulary
     if session.cur_v_idx + 1 > session.n_vocab:
         session.cur_v_idx = session.n_vocab - 1
@@ -178,15 +186,17 @@ else:
     left, right = st.columns(2)
     session.current_vocab = session.list_data.iloc[session.cur_v_idx, :]
     with left:
-        start_revise(session.current_vocab)
-    with right:
-        if session.always_show_def == "show":
-            st.markdown("##")  # placeholder for visual enhancements
+        show_vocab(session.current_vocab)
+        if session.mode == "study":
             show_definition(session.current_vocab)
         else:
-            st.markdown("")  # placeholder for visual enhancements
-            click_show_definition = st.button("show definition", type="secondary")
+            click_show_definition = st.button(
+                "show definition",
+                type="secondary",
+            )
             if click_show_definition:
                 show_definition(session.current_vocab)
+    with right:
+        show_equation(session.current_vocab)
 
     st.markdown(f"#### Progress: {session.cur_v_idx+1} / {session.n_vocab}")
