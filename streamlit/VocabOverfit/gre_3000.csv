@@ -1060,7 +1060,6 @@ lapse,n.小过失,slight error,lapse = temporary failure + slip,lapse = momentar
 knotty,adj.复杂的，困难的,full of difficulties and complications,knotty = complex + complicated,knotty = intricate + tangled,list9,1059
 laconic,adj.简洁(以至于显得粗鲁或难以理解)的,minimum of words; concise,laconic = brief + concise,laconic = terse + minimal,list10,1060
 lambaste,vt.严厉斥责,scold sharply,lambaste = criticize + harshly,lambaste = scold + severely,list11,1061
-jibe,vi.意见一致,agree,jibe = agree + align,jibe = match + consistent,list13,1062
 leaven,vt.在…中加入轻松、活泼或变更的因素,"mingle, permeate",leaven = transform + improve,leaven = infuse + positive change,list13,1063
 lenient,adj.宽大仁慈的,merciful,lenient = permissive + forgiving,lenient = tolerant + gentle,list13,1064
 intuitive,adj.直觉的,by intuition,intuitive = instinctive + natural understanding,intuitive = innate + perceptive,list15,1065
@@ -3488,7 +3487,6 @@ naysayer,n.唱反调的人,a person who says something will not work or is not p
 pragmatic,adj.实用主义的，务实的,a practical approach,pragmatic = practical + realistic,pragmatic = sensible + functional,list15,3490
 belittle,v.轻视,to speak slightingly of,belittle = diminish + undermine,belittle = disparage + devalue,list15,3491
 beneficence,n.慈善，善行,a charitable act of gift,beneficence = goodness + generosity,beneficence = kindness + altruism,list15,3492
-brackish,adj.令人恶心的,"distasteful, unpalatable",brackish = slightly salty + water,brackish = saline + freshwater mix,list15,3493
 consummate,adj.专业的，有造诣的；adj.无纰漏的，完美的,1. extremely skilled; 2. perfect,consummate = highly skilled + perfect,consummate = expert + flawless,list15,3494
 proposition,n.观点，主张,a statement or assertion that expresses a judgment or opinion,proposition = statement + judgment,proposition = assertion + opinion,list15,3495
 bewilder,v.使迷惑,"to perplex or confuse especially by a complexity, variety, or multitude of objects or considerations",bewilder = confuse + perplex,bewilder = baffle + puzzle,list15,3496
@@ -4406,3 +4404,5 @@ imperial,adj.帝国的，皇家的,"of, relating to, befitting, or suggestive of
 siphon,v.私自抽取，挪用,"to dishonestly take money from a business, account etc to use it for a purpose for which it was not intended",Siphon = misappropriate + divert,Siphon = steal + funnel,list13,4408
 austere,adj.朴素的，朴实无华的,simple,Austere = simple + unadorned,Austere = plain + frugal,list13,3353
 grudge,v.不愿意做,to be unwilling to give or admin,Grudge = reluctant + give,Grudge = unwilling + concede,list8,2230
+jibe,v.嘲笑；v.与…一致,1. to utter taunting words; 2. to be in accord,Jibe = mock + taunt,Jibe = align + agree,list13,1062
+brackish,adj.令人恶心的,"distasteful, unpalatable",Brackish = unpleasant + bitter,Brackish = distasteful + nasty,list15,3493
