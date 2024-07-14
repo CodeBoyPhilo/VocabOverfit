@@ -112,7 +112,6 @@ def show_question():
             session.vr_n_correct += 1
 
             session.vr_cur_history[session.vr_current_vocab["vocabulary"]] -= 1
-            st.write(session.vr_cur_history)
 
             if session.vr_cur_history[session.vr_current_vocab["vocabulary"]] == 0:
                 session.vr_cur_history.pop(session.vr_current_vocab["vocabulary"])
@@ -269,8 +268,6 @@ try:
             if session.vr_cur_v_idx + 1 > session.vr_n_vocab:
                 show_test_exit_message()
                 save_cur_history()
-                st.write("saved!")
-                st.write(session.vr_cur_history)
             else:
                 session.vr_current_vocab = session.vr_revise_data.iloc[
                     session.vr_cur_v_idx, :
