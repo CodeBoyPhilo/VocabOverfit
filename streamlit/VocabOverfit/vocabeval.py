@@ -173,7 +173,6 @@ if session.vocab_list is not None:
         session.ve_prev_vocab_list = session.vocab_list
         session.ve_cur_v_idx = 0
 
-st.sidebar.markdown(f"## Press start to revise for {session.vocab_list}")
 if st.sidebar.button("**Start**", type="primary", use_container_width=True):
     session.ve_start = True
 
