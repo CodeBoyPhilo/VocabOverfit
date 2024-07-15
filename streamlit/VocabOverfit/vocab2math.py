@@ -39,12 +39,12 @@ def query(query_vocab):
         if query_vocab in session.v2m_data["vocabulary"].values:
             vocab = session.v2m_data[session.v2m_data["vocabulary"] == query_vocab]
             vocabulary = vocab["vocabulary"].values[0]
-            equation_1 = vocab["equation_1"].values[0].split("=")[-1]
-            equation_2 = vocab["equation_2"].values[0].split("=")[-1]
+            equation_1 = vocab["equation_1"].values[0]
+            equation_2 = vocab["equation_2"].values[0]
 
             st.sidebar.markdown(f"## {vocabulary}")
-            st.sidebar.markdown(f"##### = {equation_1}")
-            st.sidebar.markdown(f"##### = {equation_2}")
+            st.sidebar.markdown(f"##### {equation_1}")
+            st.sidebar.markdown(f"##### {equation_2}")
 
             ch_meaning = vocab["ch_meaning"].values[0].split("；")  # Chinese semicolon
             en_meaning_full = vocab["en_meaning"].values[0]
@@ -73,11 +73,11 @@ def show_vocab(current_vocab: DataFrame):
 
 
 def show_equation(current_vocab: DataFrame):
-    equation_1 = current_vocab["equation_1"].split("=")[-1]
-    equation_2 = current_vocab["equation_2"].split("=")[-1]
+    equation_1 = current_vocab["equation_1"]
+    equation_2 = current_vocab["equation_2"]
 
-    st.markdown(f"##### = {equation_1}")
-    st.markdown(f"##### = {equation_2}")
+    st.markdown(f"##### {equation_1}")
+    st.markdown(f"##### {equation_2}")
 
 
 def show_definition(current_vocab: DataFrame):
