@@ -145,6 +145,15 @@ def load_cur_history():
     with open(os.path.join(HISTORY_DIR, f"{session.vocab_list}.json"), "r") as fin:
         session.vr_cur_history = json.load(fin)
 
+    session.vr_revise_data = session.vr_data[
+        session.vr_data["vocabulary"].isin(session.vr_cur_history.keys())
+    ].reset_index(drop=True)
+
+    session.vr_n_vocab = session.vr_revise_data.shape[0]
+    session.vr_other_data = session.vr_data[
+        session.vr_data["list"] != session.vocab_list
+    ]
+
 
 def save_cur_history():
     try:
@@ -196,6 +205,7 @@ try:
     # ==============================
 
     # -------Sidebar Element-------
+    st.sidebar.header(f"{session.vocab_list}")
     session.vr_mode = st.sidebar.radio("**Mode**", ["revise", "test"])
 
     data = pd.read_csv(DATA_DIR)
@@ -208,14 +218,14 @@ try:
     if session.vr_cur_history is None:
         load_cur_history()
 
-    session.vr_revise_data = session.vr_data[
-        session.vr_data["vocabulary"].isin(session.vr_cur_history.keys())
-    ].reset_index(drop=True)
-
-    session.vr_n_vocab = session.vr_revise_data.shape[0]
-    session.vr_other_data = session.vr_data[
-        session.vr_data["list"] != session.vocab_list
-    ]
+    # session.vr_revise_data = session.vr_data[
+    #     session.vr_data["vocabulary"].isin(session.vr_cur_history.keys())
+    # ].reset_index(drop=True)
+    #
+    # session.vr_n_vocab = session.vr_revise_data.shape[0]
+    # session.vr_other_data = session.vr_data[
+    #     session.vr_data["list"] != session.vocab_list
+    # ]
 
     if session.vocab_list != session.vr_prev_vocab_list:
         load_cur_history()
