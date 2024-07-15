@@ -68,19 +68,11 @@ You need to succeed the `test` **three** times to empty a revision list
 # ==============================
 # INITIATE SESSION STATE
 # ==============================
-if "vocab_list" not in session:
-    session.vocab_list = "list1"
-
+# None
 
 # ==============================
 # MAIN APP EXECUTION STARTS HERE
 # ==============================
-
-session.vocab_list = st.sidebar.selectbox(
-    "**Select a vocabulary list**",
-    [f"list{i}" for i in range(1, 33)],
-    label_visibility="visible",
-)
 
 # -----------Homepage Message-----------
 
