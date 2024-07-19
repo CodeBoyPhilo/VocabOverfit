@@ -10,3 +10,4 @@ streamlit/.DS_Store
 streamlit/VocabOverfit/.ipynb_checkpoints
 streamlit/VocabOverfit/add_vocab_equations.ipynb
 ./streamlit/secrets.toml
+streamlit/VocabOverfit/add_vocab_equations.ipynb

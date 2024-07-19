@@ -54,7 +54,6 @@ abuse,v.辱骂，抨击；v.不正当或不合理使用,1. condemn or villify; 2
 absurd,adj.不合理的,unreasonable,absurd = unreasonable + illogical,absurd = ridiculous + irrational,list18,54
 abash,v.使尴尬，使羞愧,embarrass,abash = embarrass + disconcert,abash = humiliate + shame,list18,55
 abandon,v./n.放纵；v.放弃,1. freedom from constraint; 2. withdraw,abandon = give up + completely,abandon = leave + desert,list21,56
-abstain,v.自我克制，主动戒绝,refrain by one's own choice,abstain = decline vote + neutral,abstain = withhold vote + non-participation,list21,57
 airtight,adj.无瑕疵的,no flaw,airtight = sealed + impermeable,airtight = perfect + indisputable,list21,58
 acerbic,adj.(心情、心境或者语调)尖酸的,cause hurt feeling,acerbic = sharp + direct,acerbic = harsh + blunt,list21,59
 abase,v.降低(地位、职位、威望或尊严),lower,abase = humiliate + degrade,abase = belittle + lower,list22,60
@@ -68,6 +67,7 @@ abhor,v.深恶痛绝，极度厌恶,extreme repugnance,abhor = hate + disgust,ab
 allay,vt.减轻,reduce intensity,allay = reduce + fear,allay = calm + worry,list25,68
 acme,n.顶点，极点,highest,acme = peak + perfection,acme = pinnacle + best,list26,69
 ambrosial,adj.(食物)特别美味的；香的,extremely pleasing,,,,70
+abstain,v.自我克制，主动戒绝,refrain by one's own choice,abstain = refrain + temptation,abstain = avoid + indulgence,list21,57
 amenity,n.(环境、设备等的)舒适，人性化；n.融洽，和谐,1. comfort; 2. pleasant or agreeable,,,,71
 amity,n.友好关系，亲善和睦,friendship,,,,72
 anarchist,n.反抗权威的人,rebel against any authority,,,,73
@@ -258,7 +258,6 @@ chagrin,n.(因为失败、出糗而导致的)不安，焦虑,distress of mind,ch
 callow,adj.不老练的，不成熟的,lacking in adult experience,callow = inexperienced + immature,callow = naive + unseasoned,list2,258
 chary,adj.非常谨慎的,cautious,chary = cautious + wary,chary = hesitant + careful,list6,259
 charlatan,n.骗子，装懂的人,a person who makes fraudulent,charlatan = impostor + knowledge,charlatan = fraud + pretender,list6,260
-churlish,adj.粗鲁无礼的,showing impolite manners,reprisal = revenge + act,churlish = uncivil + disrespectful,list6,261
 circumscribe,vt.限制,restrict,circumscribe = restrict + boundaries,circumscribe = limit + define,list8,262
 byzantine,adj.错综复杂的,complicated or secretive,byzantine = intricate complexity + deviousness,byzantine = elaborate + bureaucratic,list8,263
 cajole,v.哄骗,wheedle,cajole = persuade + coax,cajole = wheedle + sweet-talk,list9,264
@@ -403,7 +402,6 @@ converge,v.汇集，交汇于一点,move toward one,converge = meet + come toget
 cloak,v.遮掩，隐藏,conceal truly identity,cloak = cover + concealment,cloak = disguise + protection,list15,403
 culpable,adj.该受谴责的，有罪的,deserving blame,culpable = deserving blame + guilty,culpable = responsible + fault,list16,404
 cunning,adj.狡猾的,artful deceptiveness,cunning = deceptive + skillful,cunning = crafty + sly,list17,405
-court,vt./n.追求，献殷勤,seek the affections of,court = legal institution + justice,court = judicial body + trials,list17,406
 contrite,adj.(因为有罪孽或过错而感到)后悔悲痛的,showing sorrow and remorse,contrite = remorseful + apologetic,contrite = guilt + regret,list17,407
 cryptic,adj.秘密的；adj.难以理解的,1. secret; 2. beyond one's powers to know,cryptic = mysterious + obscure,cryptic = secretive + coded,list18,408
 caterwaul,v.嚎叫,make unpleasant sound,caterwaul = screech + wail,caterwaul = yowl + shriek,list19,409
@@ -847,7 +845,6 @@ genial,adj.和蔼亲切的,easygoing,genial = friendly + cheerful,genial = warm-
 grotesque,adj.难看的,unpleasant,grotesque = distorted + ugly,grotesque = bizarre + repulsive,list19,847
 grandstand,vi.为了给人留下印象而表演，哗众取宠,impress,grandstand = show off + attract attention,grandstand = perform + impress audience,list21,848
 hew,vi.遵守,confirm; hold to something firmly,hew = adhere + conform,hew = follow + abide by,list22,849
-hermetic,adj.深奥的,abstruseness,hermetic = airtight + sealed,hermetic = impermeable + closed,list24,850
 hardy,adj.顽强的,able to withstand,hardy = robust + strong,hardy = sturdy + resilient,list25,851
 harry,vt.不断烦扰，骚扰,distress; harass,harry = harass + attack,harry = pester + assault,list26,852
 hamstring,vt.使无效，使无力,ineffective,hamstring = cripple + limit,hamstring = impair + weaken,list27,853
@@ -3546,7 +3543,6 @@ blameless,adj.无刻指责的,free from guilt or blame,blameless = innocent + gu
 strain,v.尽力,"to exert (oneself, one's senses, etc) to the utmost",strain = force + pressure,strain = tension + stress,list16,3551
 lackluster,adj.黯淡无光泽的,lacking brightness,lackluster = uninspired + dull,lackluster = lifeless + unimpressive,list16,3552
 stratified,adj.形成阶层的，分层的,arranged or classified in layers or strata,stratified = layered + organized,stratified = hierarchical + tiered,list16,3553
-repertoire,n.(技术、设备或原料等的)详单,complete list,repertoire = collection + performances,repertoire = prepared works + performer,list16,3554
 bumbling,adj.笨手笨脚的, acting in a confused or ineffectual way; incompetent,bumbling = confused + ineffectual,bumbling = incompetent + clumsy,list16,3555
 quiver,v.颤抖,to shake or move with a slight trembling motion,quiver = vibrate + shiver,quiver = tremble + shake,list16,3556
 emphatic,adj.强调的，显著的,attracting special attention,emphatic = forceful + clear,emphatic = strongly expressed + assertive,list16,3557
@@ -3581,7 +3577,6 @@ discretion,n.谨慎；n.自制，节制,1. discreet; circumspection; 2. checking
 backfire,vi.产生相反的结果，事与愿违,reverse,backfire = intended result - success + negative consequence,backfire = plan + unexpected negative outcome,list17,3586
 garnish,v.装饰,"decorate, embellish",garnish = food + decorative element,garnish = plate + final touch,list17,3587
 earnest,adj.严肃认真的,"serious, grave",earnest = sincere + seriousness,earnest = genuine + intense,list17,3588
-idiomatic,adj.管用的,relating to or conforming to the natural expressions of a native speaker,idiomatic = native expression + natural usage,idiomatic = common phrase + cultural nuance,list17,3589
 revile,v.辱骂,to use abusive language,revile = criticize + abuse,revile = insult + anger,list17,3590
 accession,n.就职，n.遵守,1. the attainment or acquisition of a position of rank or power; 2. the formal acceptance of a treaty or agreement ,accession = attainment + position of power,accession = agreement + formal acceptance,list17,3591
 vacant,adj.空的；adj.心不在焉的,1. empty or unoccupied; 2. showing no interest or animation,vacant = empty + unoccupied,vacant = expression - emotion,list17,3592
@@ -3595,10 +3590,10 @@ abnegation,n.否认,self-denial or self-sacrifice,abnegation = self-denial + sac
 trammel,v. 束缚,to restrict or impede,trammel = restrict + move,trammel = impede + progress,list17,3600
 controversial,adj. 有争议的,likely to provoke public disagreement or debate,controversial = debate + strong opinions,controversial = topic + disagreement,list17,3601
 enrich,v.丰富,to improve or enhance the quality or value of something,enrich = improve + quality,enrich = add value + enhance,list17,3602
-strand,vt.遗弃，使置于困境,leave in a unfavorable place,strand = thread + single line,strand = fiber + component of rope,list17,3603
 requisite,n.必需品/adj.必不可少的，必备的,necessary,requisite = necessary + required,requisite = essential + mandatory,list17,3604
 liberation,n.解放；n.摆脱,"1. the act of setting someone free from imprisonment, slavery, or oppression; 2. the act of freeing someone from restrictions or limitations",liberation = freedom + release,liberation = unshackling + independence,list17,3605
 cast-iron,"adj.坚固的, 确凿的",extremely strong or tough; not easily broken or weakened,cast-iron = durable + unbreakable,cast-iron = strong + resilient,list17,3606
+strand,n.（线，绳，毛发等的）股，缕,"a single thin piece of thread, wire, hair etc",strand = thread + single line,strand = fiber + component of rope,list17,3603
 missionary,n.传教士,"a person sent on a religious mission, especially one sent to promote christianity in a foreign country",missionary = religious envoy + spreader of faith,missionary = preacher + traveler,list17,3607
 curt,adj.言辞简略的，直接(以致显得粗鲁)的,"direct, brief, and potentially rude",curt = brief + abrupt,curt = short + blunt,list17,3608
 advantage,n.优势,a condition or circumstance that puts one in a favorable or superior position,advantage = benefit + upper hand,advantage = edge + favorable position,list17,3609
@@ -3659,7 +3654,6 @@ master,n. 大师；v. 掌握,1. a person who has control over something or someo
 unambiguous,adj. 明确的,not open to more than one interpretation; clear and precise.,unambiguous = clear + definite,unambiguous = explicit + unequivocal,list18,3664
 utter,v. 说出；adj. 完全的,1. to express something in words; 2. complete or absolute.,utter = speak + say,utter = verbalize + express,list18,3665
 artful,adj. 灵巧的,showing creative skill or taste.,artful = skillful + creative,artful = masterful + inventive,list18,3666
-seethe,v. 激动,to be filled with intense but unexpressed anger.,seethe = simmer + suppress anger,seethe = rage + contain,list18,3667
 comprehend,vt.理解，了解；vt.包括，包含,1. grasp; 2. contain or hold within,comprehend = understand + grasp,comprehend = perceive + know,list18,3668
 minute,adj.仔细的，谨小慎微的；adj.小的，不重要的,1. carefully scrutiny; 2. of small important,minute = tiny + small,minute = microscopic + minuscule,list18,3669
 remarkable,adj. 非凡的,worthy of attention; striking.,remarkable = noteworthy + striking,remarkable = exceptional + impressive,list18,3670
@@ -3887,7 +3881,6 @@ outstrip,v. 超过,to move faster than and overtake someone or something.,outstr
 severe,adj. 严重的,very great; intense.,severe = intense + extreme,severe = acute + serious,list21,3892
 malady,n. 疾病,a disease or ailment.,malady = disease + ailment,malady = illness + disorder,list21,3893
 entrench,v. 固定,to establish something firmly so that it is very difficult to change.,entrench = establish + deeply,entrench = embed + secure,list21,3894
-compound,n.混和物；adj.混合的；v.混合；v.使恶化，加重,1. bring together; 2. make worse,compound = worsen + intensify,compound = aggravate + exacerbate,list21,3895
 disquisition,n.专题论文,systematic search,disquisition = essay + detailed analysis,disquisition = formal inquiry + discussion,list21,3896
 mould,v. 塑造,to form (an object) out of malleable material.,mould = shape + create,mould = sculpt + form,list21,3897
 modish,adj. 流行的,being in current fashion; stylish.,modish = in vogue + chic,modish = modern + up-to-date,list21,3898
@@ -4405,3 +4398,10 @@ austere,adj.朴素的，朴实无华的,simple,Austere = simple + unadorned,Aust
 grudge,v.不愿意做,to be unwilling to give or admin,Grudge = reluctant + give,Grudge = unwilling + concede,list8,2230
 jibe,v.嘲笑；v.与…一致,1. to utter taunting words; 2. to be in accord,Jibe = mock + taunt,Jibe = align + agree,list13,1062
 brackish,adj.令人恶心的,"distasteful, unpalatable",Brackish = unpleasant + bitter,Brackish = distasteful + nasty,list15,3493
+churlish,adj.粗鲁无礼的,showing impolite manners,churlish = unpleasant + ill-mannered,churlish = uncivil + disrespectful,list6,261
+repertoire,全部节目,"a list or supply of dramas, operas, pieces, or parts that a company or person is prepared to perform",repertoire = collection + performances,repertoire = prepared works + performer,list16,3554
+court,招致,to behave so as to invite or incur,court = invite + risk,court = behave + consequences,list17,406
+idiomatic,adj.惯用的,relating to or conforming to the natural expressions of a native speaker,idiomatic = native expression + natural usage,idiomatic = common phrase + cultural nuance,list17,3589
+seethe,v. 激动,to be filled with intense but unexpressed anger,seethe = simmer + suppress anger,seethe = rage + contain,list18,3667
+compound,v.加剧,to make worse,compound = worsen + intensify,compound = aggravate + exacerbate,list21,3895
+hermetic,adj.密封的，与世隔绝的,impervious to external influence,hermetic = airtight + sealed,hermetic = impermeable + closed,list24,850
