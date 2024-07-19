@@ -142,6 +142,8 @@ if "ve_start" not in session:
     session.ve_start = False
 if "ve_cur_history" not in session:
     load_cur_history()
+if "ve_first_q" not in session:
+    session.ve_first_q = True
 # ==============================
 # MAIN APP EXECUTION STARTS HERE
 # ==============================
@@ -172,6 +174,7 @@ if session.vocab_list is not None:
         session.ve_start = False
         session.ve_prev_vocab_list = session.vocab_list
         session.ve_cur_v_idx = 0
+        session.ve_first_q = True
 
 if st.sidebar.button("**Start**", type="primary", use_container_width=True):
     session.ve_start = True
@@ -203,6 +206,9 @@ if session.ve_start:
         show_exit_message()
     else:
         session.ve_current_vocab = session.ve_list_data.iloc[session.ve_cur_v_idx, :]
+        if session.ve_first_q:
+            make_question()
+            session.ve_first_q = False
         if session.ve_prev_q_idx != session.ve_cur_v_idx:
             session.ve_prev_q_idx = session.ve_cur_v_idx
             make_question()

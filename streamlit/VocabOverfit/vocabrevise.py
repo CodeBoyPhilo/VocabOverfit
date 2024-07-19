@@ -200,12 +200,13 @@ try:
         session.vr_prev_mode = "NA"
     if "vr_cur_history" not in session:
         session.vr_cur_history = None
+    if "first_q" not in session:
+        session.first_q = True
     # ==============================
     # MAIN APP EXECUTION STARTS HERE
     # ==============================
 
     # -------Sidebar Element-------
-    st.sidebar.header(f"{session.vocab_list}")
     session.vr_mode = st.sidebar.radio("**Mode**", ["revise", "test"])
 
     data = pd.read_csv(DATA_DIR)
@@ -218,19 +219,11 @@ try:
     if session.vr_cur_history is None:
         load_cur_history()
 
-    # session.vr_revise_data = session.vr_data[
-    #     session.vr_data["vocabulary"].isin(session.vr_cur_history.keys())
-    # ].reset_index(drop=True)
-    #
-    # session.vr_n_vocab = session.vr_revise_data.shape[0]
-    # session.vr_other_data = session.vr_data[
-    #     session.vr_data["list"] != session.vocab_list
-    # ]
-
     if session.vocab_list != session.vr_prev_vocab_list:
         load_cur_history()
         session.vr_prev_vocab_list = session.vocab_list
         session.vr_cur_v_idx = 0
+        session.first_q = True
 
     if session.vr_n_vocab != 0:
         left, right = st.columns(2)
@@ -282,6 +275,9 @@ try:
                 session.vr_current_vocab = session.vr_revise_data.iloc[
                     session.vr_cur_v_idx, :
                 ]
+                if session.first_q:
+                    make_question()
+                    session.first_q = False
                 if session.vr_prev_q_idx != session.vr_cur_v_idx:
                     session.vr_prev_q_idx = session.vr_cur_v_idx
                     make_question()
