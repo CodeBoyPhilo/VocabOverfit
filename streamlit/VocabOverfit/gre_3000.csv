@@ -1,4 +1,3 @@
-vocabulary,ch_meaning,en_meaning,equation_1,equation_2,list,id
 aberrant,adj.异常的，非常规的,deviating,,,,1
 abeyance,n.中止，搁置,inactivity,,,,2
 abjure,v.发誓放弃；v.抵制，避免,1. rejecting; 2. resist,,,,3
@@ -4294,7 +4293,6 @@ outstanding,adj. 优秀的,the english meaning of this word: exceptionally good 
 futurity,n. 未来,the english meaning of this word: the state of being in the future; future time,futurity = future + time,futurity = anticipation + tomorrow,list26,4306
 pervasive,adj. 普遍的,spreading widely throughout an area or a group of people,pervasive = widespread + omnipresent,pervasive = ubiquitous + all-encompassing,list26,4307
 premature,adj. 过早的,occurring or done before the proper time,premature = early + untimely,premature = before + scheduled,list26,4308
-adj. 神职的,relating to the clergy or church officials,relating to the clergy or church officials,clerical = religious + clergy,clerical = ecclesiastical + church,list26,4309
 tangible,adj.可感知的,capable of being perceived,tangible = physical + touchable,tangible = concrete + solid,list26,4310
 dedicate,v. 奉献,"to devote time, effort, or oneself to a particular task or purpose",dedicate = devote + commit,dedicate = allocate + time/effort,list26,4311
 countenance,v.容忍；v.赞成，推崇,1. put up with; 2. have a favorable opinion of,countenance = approve + support,countenance = endorse + encourage,list26,4312
@@ -4405,3 +4403,4 @@ idiomatic,adj.惯用的,relating to or conforming to the natural expressions of 
 seethe,v. 激动,to be filled with intense but unexpressed anger,seethe = simmer + suppress anger,seethe = rage + contain,list18,3667
 compound,v.加剧,to make worse,compound = worsen + intensify,compound = aggravate + exacerbate,list21,3895
 hermetic,adj.密封的，与世隔绝的,impervious to external influence,hermetic = airtight + sealed,hermetic = impermeable + closed,list24,850
+clerical,adj.神职的,relating to the clergy or church officials,clerical = religious + clergy,clerical = ecclesiastical + church,list26,4309
