@@ -12,7 +12,10 @@ from streamlit import session_state as session
 
 
 def _parse_option(opt):
-    return opt.split("=")[1]
+    parsed = opt.split("=")[1]
+    if parsed[-1] == "\\":
+        parsed = parsed[:-1]
+    return parsed
 
 
 def make_question():
@@ -46,14 +49,43 @@ def show_question():
     left, right = st.columns(2)
     with left:
         st.markdown(f"## {session.ve_current_vocab['vocabulary']}")
-        session.ve_selected = st.radio(
-            "dummy label", session.ve_options, label_visibility="hidden", index=None
-        )
+
+        if session.answer_mode == "selection":
+            session.ve_selected = st.radio(
+                "dummy label", session.ve_options, label_visibility="hidden", index=None
+            )
+        else:
+            for key, opt in zip(["a", "s", "d", "f"], session.ve_options):
+                st.write(f"`{key}` - {opt}")
     with right:
         show_metric()
 
-    if st.button("Submit", type="primary", use_container_width=True):
-        session.ve_n_finished += 1
+
+def check_answer():
+
+    session.ve_answered_cur_q = False
+
+    if session.answer_mode == "selection":
+
+        if st.button("Submit", type="primary", use_container_width=True):
+            session.ve_n_finished += 1
+            session.ve_answered_cur_q = True
+
+    else:
+        mapper = {"a": 0, "s": 1, "d": 2, "f": 3, "v": None}
+
+        try:
+            session.ve_selected = session.ve_options[mapper[session.ve_cmd]]
+            session.ve_n_finished += 1
+            session.ve_answered_cur_q = True
+        except KeyError:
+            pass
+        except TypeError:
+            session.ve_selected = None
+            session.ve_n_finished += 1
+            session.ve_answered_cur_q = True
+
+    if session.ve_answered_cur_q:
 
         if session.ve_selected == session.ve_correct_opt:
             st.write(":green[**Fantastic!**]")
@@ -115,6 +147,11 @@ def show_exit_message():
     save_cur_history()
 
 
+def submit_key_in_answer():
+    session.ve_cmd = session.ve_key_in_answer
+    session.ve_key_in_answer = ""
+
+
 # ==============================
 # CONSTANT VARIABLES
 # ==============================
@@ -144,6 +181,8 @@ if "ve_cur_history" not in session:
     load_cur_history()
 if "ve_first_q" not in session:
     session.ve_first_q = True
+if "ve_key_in_answer" not in session:
+    session.ve_key_in_answer = ""
 # ==============================
 # MAIN APP EXECUTION STARTS HERE
 # ==============================
@@ -175,6 +214,9 @@ if session.vocab_list is not None:
         session.ve_prev_vocab_list = session.vocab_list
         session.ve_cur_v_idx = 0
         session.ve_first_q = True
+        session.key_in_answer = ""
+
+session.answer_mode = st.sidebar.radio("Answer Mode:", ["selection", "key-in"])
 
 if st.sidebar.button("**Start**", type="primary", use_container_width=True):
     session.ve_start = True
@@ -186,20 +228,41 @@ if st.sidebar.button("**Start**", type="primary", use_container_width=True):
 
 if session.ve_start:
 
-    left, right = st.columns(2)
+    if session.answer_mode == "selection":
 
-    if left.button(
-        "Previous", key="Previous", type="secondary", use_container_width=True
-    ):
-        session.ve_cur_v_idx -= 1
-        if session.ve_cur_v_idx < 0:
-            session.ve_cur_v_idx = 0
+        left, right = st.columns(2)
 
-    if right.button("Next", key="Next", type="secondary", use_container_width=True):
-        # to ensure that the user can hit Previous once to return to the last vocabulary
-        if session.ve_cur_v_idx + 1 > session.ve_n_vocab:
-            session.ve_cur_v_idx = session.ve_n_vocab - 1
-        session.ve_cur_v_idx += 1
+        if left.button(
+            "Previous", key="Previous", type="secondary", use_container_width=True
+        ):
+            session.ve_cur_v_idx -= 1
+            if session.ve_cur_v_idx < 0:
+                session.ve_cur_v_idx = 0
+
+        if right.button("Next", key="Next", type="secondary", use_container_width=True):
+            # to ensure that the user can hit Previous once to return to the last vocabulary
+            if session.ve_cur_v_idx + 1 > session.ve_n_vocab:
+                session.ve_cur_v_idx = session.ve_n_vocab - 1
+            session.ve_cur_v_idx += 1
+
+    else:
+        st.text_input(
+            "Your answer:", "", key="ve_key_in_answer", on_change=submit_key_in_answer
+        )
+        # session.ve_cmd = session.ve_key_in_answer
+        try:
+            session.ve_cmd = list(session.ve_cmd)[-1]
+        except Exception as e:
+            pass
+
+        if session.ve_cmd == ";":
+            session.ve_cur_v_idx -= 1
+            if session.ve_cur_v_idx < 0:
+                session.ve_cur_v_idx = 0
+        elif session.ve_cmd == "'":
+            if session.ve_cur_v_idx + 1 > session.ve_n_vocab:
+                session.ve_cur_v_idx = session.ve_n_vocab - 1
+            session.ve_cur_v_idx += 1
 
     # Start revising
     if session.ve_cur_v_idx + 1 > session.ve_n_vocab:
@@ -212,7 +275,10 @@ if session.ve_start:
         if session.ve_prev_q_idx != session.ve_cur_v_idx:
             session.ve_prev_q_idx = session.ve_cur_v_idx
             make_question()
+
         show_question()
+
+        check_answer()
 
 else:
     pass
