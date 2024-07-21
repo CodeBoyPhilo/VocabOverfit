@@ -143,8 +143,13 @@ def check_answer():
             :red[**Wrong** - {session.vr_selected}]\n
             :green[**Correct** - {session.vr_correct_opt}]
             """
-            st.write(text)
             session.vr_cur_history[session.vr_current_vocab["vocabulary"]] = 3
+
+            left, right = st.columns(2)
+            with left:
+                st.write(text)
+            with right:
+                show_definition(session.vr_current_vocab)
 
         session.vr_correct_rate_tracker.append(
             np.round((session.vr_n_correct / session.vr_n_finished) * 100, 2)
@@ -268,6 +273,7 @@ try:
         session.vr_cur_v_idx = 0
         session.first_q = True
         session.vr_cmd = ""
+        session.vr_cur_v_idx = 0
         session.vr_n_correct = 0
         session.vr_n_finished = 0
         session.vr_correct_rate_tracker = [0]
