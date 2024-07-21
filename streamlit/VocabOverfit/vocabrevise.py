@@ -331,6 +331,7 @@ try:
                 session.vr_current_vocab = session.vr_revise_data.iloc[
                     session.vr_cur_v_idx, :
                 ]
+                left, right = st.columns(2)
                 with left:
                     show_vocab(session.vr_current_vocab)
                     show_definition(session.vr_current_vocab)
