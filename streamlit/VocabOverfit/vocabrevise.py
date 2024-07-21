@@ -380,6 +380,5 @@ except Exception as e:
     st.markdown("## Huh…You really don't study at all?")
 
     st.error(ERROR_MSG)
-    st.write(e)
 
     session.vr_cur_history = None
