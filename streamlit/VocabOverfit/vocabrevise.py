@@ -14,7 +14,7 @@ from streamlit import session_state as session
 
 def show_revise_exit_message():
     st.balloons()
-    st.markdown("### You have finished this list! Congrats!")
+    st.markdown("### You havr finished this list! Congrats!")
     st.markdown("#### Select `test` on the sidebar to evaluate your revision!")
 
 
@@ -98,29 +98,53 @@ def show_question():
     left, right = st.columns(2)
     with left:
         st.markdown(f"## {session.vr_current_vocab['vocabulary']}")
-        session.vr_selected = st.radio(
-            "dummy label", session.vr_options, label_visibility="hidden", index=None
-        )
+
+        if session.vr_answer_mode == "selection":
+            session.vr_selected = st.radio(
+                "dummy label", session.vr_options, label_visibility="hidden", index=None
+            )
+        else:
+            for key, opt in zip(["a", "s", "d", "f"], session.vr_options):
+                st.write(f"`{key}`: {opt}")
     with right:
         show_metric()
 
-    if st.button("Submit", type="primary", use_container_width=True):
-        session.vr_n_finished += 1
+
+def check_answer():
+    session.vr_answered_cur_q = False
+
+    if session.vr_answer_mode == "selection":
+
+        if st.button("Submit", type="primary", use_container_width=True):
+            session.vr_n_finished += 1
+            session.vr_answered_cur_q = True
+
+    else:
+        mapper = {"a": 0, "s": 1, "d": 2, "f": 3, "v": None}
+
+        try:
+            session.vr_selected = session.vr_options[mapper[session.vr_cmd]]
+            session.vr_n_finished += 1
+            session.vr_answered_cur_q = True
+        except KeyError:
+            pass
+        except TypeError:
+            session.vr_selected = None
+            session.vr_n_finished += 1
+            session.vr_answered_cur_q = True
+
+    if session.vr_answered_cur_q:
 
         if session.vr_selected == session.vr_correct_opt:
             st.write(":green[**Fantastic!**]")
             session.vr_n_correct += 1
-
-            session.vr_cur_history[session.vr_current_vocab["vocabulary"]] -= 1
-
-            if session.vr_cur_history[session.vr_current_vocab["vocabulary"]] == 0:
-                session.vr_cur_history.pop(session.vr_current_vocab["vocabulary"])
         else:
             text = f"""
             :red[**Wrong** - {session.vr_selected}]\n
             :green[**Correct** - {session.vr_correct_opt}]
             """
             st.write(text)
+            session.vr_cur_history[session.vr_current_vocab["vocabulary"]] = 3
 
         session.vr_correct_rate_tracker.append(
             np.round((session.vr_n_correct / session.vr_n_finished) * 100, 2)
@@ -155,12 +179,17 @@ def load_cur_history():
     ]
 
 
-def save_cur_history():
+def savr_cur_history():
     try:
         with open(os.path.join(HISTORY_DIR, f"{session.vocab_list}.json"), "w") as fout:
             json.dump(session.vr_cur_history, fout)
     except Exception as e:
         st.error(e)
+
+
+def submit_key_in_answer():
+    session.vr_cmd = session.vr_key_in_answer
+    session.vr_key_in_answer = ""
 
 
 # ==============================
@@ -170,7 +199,7 @@ SCRIPT_DIR = Path(__file__).parent
 DATA_DIR = SCRIPT_DIR / "gre_3000.csv"
 HISTORY_DIR = os.path.expanduser("~/.streamlit/history")
 ERROR_MSG = """
-You have not studied **anything**!
+You havr not studied **anything**!
 
 you must select a list to study and evaluate first, before you can revise anything!
 """
@@ -202,12 +231,22 @@ try:
         session.vr_cur_history = None
     if "first_q" not in session:
         session.first_q = True
+    if "vr_key_in_answer" not in session:
+        session.vr_key_in_answer = ""
+    if "vr_cmd" not in session:
+        session.vr_cmd = session.vr_key_in_answer
+
     # ==============================
     # MAIN APP EXECUTION STARTS HERE
     # ==============================
 
     # -------Sidebar Element-------
-    session.vr_mode = st.sidebar.radio("**Mode**", ["revise", "test"])
+    session.vr_mode = st.sidebar.radio("**Study Mode**", ["revise", "test"])
+
+    if session.vr_mode == "test":
+        session.vr_answer_mode = st.sidebar.radio(
+            "Answer Mode", ["selection", "key-in"]
+        )
 
     data = pd.read_csv(DATA_DIR)
     data = data[data["list"].isnull() == False]
@@ -226,19 +265,46 @@ try:
         session.first_q = True
 
     if session.vr_n_vocab != 0:
-        left, right = st.columns(2)
-        if left.button(
-            "Previous", key="Previous", type="secondary", use_container_width=True
-        ):
-            session.vr_cur_v_idx -= 1
-            if session.vr_cur_v_idx < 0:
-                session.vr_cur_v_idx = 0
 
-        if right.button("Next", key="Next", type="secondary", use_container_width=True):
-            # to ensure that the user can hit Previous once to return to the last vocabulary
-            if session.vr_cur_v_idx + 1 > session.vr_n_vocab:
-                session.vr_cur_v_idx = session.vr_n_vocab - 1
-            session.vr_cur_v_idx += 1
+        if session.vr_mode == "revise" or session.vr_answer_mode == "selection":
+
+            left, right = st.columns(2)
+            if left.button(
+                "Previous", key="Previous", type="secondary", use_container_width=True
+            ):
+                session.vr_cur_v_idx -= 1
+                if session.vr_cur_v_idx < 0:
+                    session.vr_cur_v_idx = 0
+
+            if right.button(
+                "Next", key="Next", type="secondary", use_container_width=True
+            ):
+                # to ensure that the user can hit Previous once to return to the last vocabulary
+                if session.vr_cur_v_idx + 1 > session.vr_n_vocab:
+                    session.vr_cur_v_idx = session.vr_n_vocab - 1
+                session.vr_cur_v_idx += 1
+
+        else:
+            st.text_input(
+                "Your answer:",
+                "",
+                key="vr_key_in_answer",
+                on_change=submit_key_in_answer,
+            )
+            # session.vr_cmd = session.vr_key_in_answer
+            try:
+                session.vr_cmd = list(session.vr_cmd)[-1]
+            except Exception as e:
+                pass
+
+            if session.vr_cmd == ";":
+                session.vr_cur_v_idx -= 1
+                if session.vr_cur_v_idx < 0:
+                    session.vr_cur_v_idx = 0
+            elif session.vr_cmd == "'":
+                if session.vr_cur_v_idx + 1 > session.vr_n_vocab:
+                    session.vr_cur_v_idx = session.vr_n_vocab - 1
+                session.vr_cur_v_idx += 1
 
         if session.vr_mode == "revise":
             if session.vr_mode != session.vr_prev_mode:
@@ -270,7 +336,7 @@ try:
                 session.vr_prev_mode = session.vr_mode
             if session.vr_cur_v_idx + 1 > session.vr_n_vocab:
                 show_test_exit_message()
-                save_cur_history()
+                savr_cur_history()
             else:
                 session.vr_current_vocab = session.vr_revise_data.iloc[
                     session.vr_cur_v_idx, :
@@ -281,12 +347,15 @@ try:
                 if session.vr_prev_q_idx != session.vr_cur_v_idx:
                     session.vr_prev_q_idx = session.vr_cur_v_idx
                     make_question()
+
                 show_question()
+
+                check_answer()
 
     else:
         st.balloons()
         st.header(f"Real genius? No more to revise for {session.vocab_list}!")
-        save_cur_history()
+        savr_cur_history()
 
 
 except Exception as e:
@@ -294,5 +363,6 @@ except Exception as e:
     st.markdown("## Huh…You really don't study at all?")
 
     st.error(ERROR_MSG)
+    st.write(e)
 
     session.vr_cur_history = None
