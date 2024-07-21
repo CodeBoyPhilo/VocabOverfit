@@ -1,14 +1,10 @@
 vocabulary,ch_meaning,en_meaning,equation_1,equation_2,list,id
 aberrant,adj.异常的，非常规的,deviating,,,,1
-abeyance,n.中止，搁置,inactivity,,,,2
 abjure,v.发誓放弃；v.抵制，避免,1. rejecting; 2. resist,,,,3
 abnegate,v.否认,"deny, renounce",,,,4
 aboveboard,adj.无欺诈的，光明正大的,free from deceit or duplicity,,,,5
-abscond,v.偷偷离开,depart secretly,,,,6
-absolve,v.使无罪，解除责任,"free from guilt, exculpate",,,,7
 abundant,adj.大量的,great plenty,,,,8
 acquainted,adj.熟悉的,having information,,,,9
-abysmal,adj.(程度)很深的；极端的,immeasurably great,,,,10
 accessory,adj.辅助的，附属的,"secondary, supplementary",,,,11
 accidental,adj.意外发生的，偶然的,unexpectedly,,,,12
 accolade,n.同意，赞赏；v.赞扬,1. approval; 2. praise,,,,13
@@ -25,7 +21,6 @@ adumbrate,vt.预示着,give a slight indication,,,,23
 adventitious,adj.外来的，后天的，非内在的,not inherent or innate,,,,24
 adversary,n.敌手，对手,resists; enemy,,,,25
 advert,vi.引起注意；提到,refer,,,,26
-aggrandize,vt.增加、提高(力量、财富、地位、声誉)等,enhance,,,,27
 aggregate,n.集合体；v.集合，聚集,1. units or parts; 2. collect or gather,,,,28
 aggressive,adj.好斗的；adj.强有力的，强烈的,1. attack; 2. forcefulness,,,,29
 alibi,n.不在场的证明；托辞，借口,excuse,,,,30
@@ -68,6 +63,9 @@ allay,vt.减轻,reduce intensity,allay = reduce + fear,allay = calm + worry,list
 acme,n.顶点，极点,highest,acme = peak + perfection,acme = pinnacle + best,list26,69
 ambrosial,adj.(食物)特别美味的；香的,extremely pleasing,,,,70
 abstain,v.自我克制，主动戒绝,refrain by one's own choice,abstain = refrain + temptation,abstain = avoid + indulgence,list21,57
+abscond,v.偷偷离开,depart secretly,abscond = escape + secretly,abscond = flee + avoid detection,list28,6
+absolve,v.使无罪，解除责任,"free from guilt, exculpate",absolve = forgive + free,absolve = clear + responsibility,list28,7
+abeyance,n.中止，搁置,inactivity,abeyance = suspension + temporary,abeyance = inactivity + pause,list28,2
 amenity,n.(环境、设备等的)舒适，人性化；n.融洽，和谐,1. comfort; 2. pleasant or agreeable,,,,71
 amity,n.友好关系，亲善和睦,friendship,,,,72
 anarchist,n.反抗权威的人,rebel against any authority,,,,73
@@ -143,7 +141,6 @@ bale,n.痛苦，悲哀,sorrow,,,,142
 balky,adj.不服管束的，倔强的,refusing,,,,143
 balderdash,n.胡言乱语，废话，无意义的话,n.having no meaning,,,,144
 balm,n.香油，止痛膏；安慰物,soothe,,,,145
-banal,adj.非原创的，陈腐的,trite,,,,146
 bane,n.有害的物质,kill or injure a living thing,,,,147
 barb,n.尖锐而严厉的批评,a critical remark,,,,148
 barbarous,adj.野蛮的,mercilessly harsh,,,,149
@@ -158,7 +155,6 @@ bellwether,n.领导者，带头人,one that takes the lead,,,,157
 beneficent,adj.仁慈的，好慈善的；adj.(对个人或社会)有益的,1. charitable; 2. contributing to social well-being,,,,158
 berate,v.(长时间)严厉指责,scold vehemently,,,,159
 beseech,v.(急切地)恳求,beg,,,,160
-besmirch,v.诽谤，玷污,detract from the honor,,,,161
 bigot,n.固执己见者，有偏见的人,a person obstinately devoted to his own opinions,,,,162
 blandishment,n.甜言蜜语，讨好某人的话,something that tends to coax or cajole,,,,163
 blasé,adj.(过度放纵之后)厌倦享乐的，腻烦的,apathetic,,,,164
@@ -212,7 +208,6 @@ brazen,adj.蛮横大胆的，厚颜无耻的；v.大胆自信地去面对或从�
 bland,adj.无趣的,dull,bland = dull + unexciting,bland = mild + plain,list27,212
 buoyant,adj.心情好的,showing a good mood,,,,213
 burnish,v.擦亮，磨光,make smooth or glossy,,,,214
-buttress,vt.为…提供支撑的证据或者信息,provide evidence or information for,,,,215
 cache,n.囤货，藏货,a supply,,,,216
 calcify,v.使僵化,make inflexible or unchangeable,,,,217
 calligraphy,n.(优美的)书法,elegant handwriting,,,,218
@@ -226,13 +221,11 @@ careworn,adj.忧心忡忡的，焦虑的,showing grief,,,,225
 carnal,adj.肉体的，物质的；adj.世俗的,1. relating to the physical; 2. worldly,,,,226
 carouse,v.畅饮，狂饮作乐,drink liquor freely,,,,227
 carp,v.对小事吹毛求疵，挑剔，表现不满,bound by very close association,,,,228
-cliquish,adj.小集团的,bound by very close association,,,,229
 cast,v.提出；v.抛弃,1. put forth; 2. get rid off,,,,230
 catalyze,vt.成为…的导火索，导致,be the cause of,,,,231
 categorical,adj.没有例外的；绝对的,absolute,,,,232
 caveat,n.警告，告诫,a warning of a specific limitation,,,,233
 cataclysmal,adj.灾难性的,bringing about ruin,,,,234
-cede,vt.(根据条约)放弃，割让,surrender possession of,,,,235
 cessation,n.终止，暂停,the stopping of a process,,,,236
 chaff,v.开玩笑,make jokes,,,,237
 chameleon,n.变色龙，善变的人,a person who changes opinions,,,,238
@@ -278,6 +271,8 @@ catastrophe,n.大灾难；n.彻底的失败,1. a tragedy; 2. utter failure,catas
 circumvent,v.躲避，不遵从,avoid having to comply with,circumvent = avoid + bypass,circumvent = navigate + escape,list24,279
 cavil,v.挑剔，吹毛求疵,quibble,cavil = complain + trivial,cavil = objection - importance,list27,280
 clout,n.权力，影响力,influence,,,,281
+buttress,vt.为…提供支撑的证据或者信息,provide evidence or information for,buttress = strengthen + support,buttress = bolster + reinforce,list28,215
+cede,vt.(根据条约)放弃，割让,surrender possession of,cede = relinquish + territory,cede = surrender + power,list28,235
 coax,v.哄骗,cajole,,,,282
 coda,n.终曲,the concluding passage,,,,283
 coeval,adj.同时代的，同龄的,of the same age,,,,284
@@ -369,7 +364,6 @@ crutch,n./v.支撑，支柱,supports,,,,369
 crux,n.中心，关键点,crirical point,,,,370
 cultivate,vt.提升，加强；vt.种植，培养,1. improve; 2. promote growth,,,,371
 curmudgeon,n.脾气坏的、爱抱怨的人,irritable and complaining,,,,372
-cursory,adj.匆忙的，不注意细节的,excessive or careless speed,,,,373
 cynic,n.反人类的喷子,selfishness,,,,374
 dabble,vi.涉猎，对…浅尝辄止,superficially,,,,375
 daft,adj.不明智的,lack of good sense or judgement,,,,376
@@ -382,7 +376,6 @@ dappled,adj.有斑点的，花的,marked with small spots,,,,382
 dart,vi.突然移动，猛冲，狂奔；n.公开侮辱,1. suddenly; 2. intended to hurt another's fellings,,,,383
 daunt,vt.使胆怯，吓倒,to lessen the courage,,,,384
 dawdle,v.拖拖拉拉,slowly,,,,385
-deadpan,n.无趣的，无生气的，不活泼的,impassively,,,,386
 debark,v.(使)下船(飞机，车等)；卸(客，货),unload from a ship or an airplane,,,,387
 debris,n.废墟,discarded useless material,,,,388
 daredevil,adj./n.大胆鲁莽的(人),foolishly,daredevil = adventurous + risk-taker,daredevil = bold + fearless,list2,389
@@ -414,6 +407,7 @@ croon,v.低声歌唱或说话,murmuring,croon = sing + softly,croon = hum + gent
 debut,n.初次登台，出道,first appearance,,,,416
 decadence,n.衰落，颓废,deterioration or decline,,,,417
 detest,v.厌恶,dislike,,,,418
+deadpan,n.无趣的，无生气的，不活泼的,impassively,deadpan = expressionless + impassive,deadpan = blank + serious,list28,386
 decrepit,adj.虚弱的，衰老的，破旧的,weakened,,,,419
 default,n.不履行义务，玩忽职守,nonperformance,,,,420
 defer,v.推迟，延期vi.遵从,postpone,,,,421
@@ -422,7 +416,6 @@ deficiency,n.缺乏，不足,inadequate,,,,423
 defuse,vt.抚慰，减轻,make less tense,,,,424
 dehydrate,vt.去除水分，使干燥；v.使失去活力,1. remove water; 2. deprive of vitality,,,,425
 deject,vt.使沮丧,lower the spirits; dishearten,,,,426
-deliberate,adj.深思熟虑的,careful,,,,427
 delicacy,n.(外貌、结构等)精致,fineness,,,,428
 delirium,n.精神错乱；极度兴奋，发狂,mental disturbance,,,,429
 delusion,n.错觉，妄想,false,,,,430
@@ -458,7 +451,6 @@ devoted,adj.投入的；忠诚的,loyalty; devotion,,,,459
 devout,adj.忠诚的,allegiance,,,,460
 diabolic,adj.恶魔一般的,devil,,,,461
 diaphanous,adj.模糊的；非实在的；adj.(质地精致得)几乎透明的,"1. vague insubstantial; 2. transparent, translucent",,,,462
-didactic,adj.喜欢说教的，思修的,teach,,,,463
 diehard,adj.顽固的，保守的n.顽固的人，保守的人,"determined, devoted/ opposes change and refuses new ideas",,,,464
 dilate,v.(使)膨胀，扩大,enlarge; expand; wide,,,,465
 dingy,adj.昏暗的；肮脏的,darkened; dirty,,,,466
@@ -504,7 +496,6 @@ disjunctive,adj.分离的,breaks or disunity,,,,505
 dismay,vt.使失去勇气；vt.使不安，使焦虑,"1. lose courage; 2. trouble, uneasy",,,,506
 dispassionate,adj.客观公正的，不易被情绪或偏见影响的,unaffected,,,,507
 dispose,vt.使倾向于；vi.处理掉(与of连用，disposeof),1. tendency; incline; 2. get rid of; throw out,,,,508
-disregard,vt.漠视，不关注；n.缺乏兴趣，缺乏关心,1. no attention; 2. lack of interest or concern,,,,509
 dissect,vt.仔细分析,"examine, analyze minute",,,,510
 dissension,n.意见不合,difference; disagreement,,,,511
 dissolute,adj.放荡的，无节制的,restraint; indulging,,,,512
@@ -537,7 +528,6 @@ doze,vi./n.小憩,lightly,,,,538
 drawl,v.慢吞吞地说,speak slowly,,,,539
 drench,vt.使湿透，浸透,wet thoroughtly,,,,540
 drivel,n.胡言乱语,meaningless,,,,541
-diminutive,adj.极小的,less than average,,,,542
 drollness,n.搞笑，逗逼,amusing,,,,543
 drone,v.低沉单调地说；嗡嗡地叫,talk monotonous,,,,544
 discharge,vt.解雇；vt.释放,1. dismiss; 2. free,discharge = release + let go,discharge = expel + send out,list2,545
@@ -561,6 +551,7 @@ dismantle,vt.分解，分拆,pieces; destroy integrity,dismantle = disassemble +
 distort,vt.扭曲，歪曲,twist,distort = twist + deform,distort = warp + misfigure,list27,563
 dulcet,adj.悦耳的，令人愉悦的,melodious,,,,564
 dullard,n.笨蛋,stupid,,,,565
+diminutive,adj.极小的,less than average,diminutive = minor + insignificant,diminutive = tiny + small,list28,542
 dupe,n.易受骗的人；vt.欺骗,1. easily deceived; 2. deceive,,,,566
 duplicitous,adj.两面派的，奸诈的,cheating,,,,567
 dyspeptic,adj.脾气坏的,bad-tempered,,,,568
@@ -651,9 +642,7 @@ extemporize,v.即兴表现,perform without prior preparation,,,,652
 extinct,adj.灭绝的,no longer existing,,,,653
 extort,vt.勒索,force,,,,654
 extract,vt.用力拔出,take out,,,,655
-extravagant,adj.挥霍的；adj.过度的，不必要的,1. spending money freely; 2. beyond normal limit,,,,656
 extricate,vt.使解脱，救出,free from entanglement,,,,657
-exude,v.分泌，流出,flow forth,,,,658
 exult,vi.感到欢喜,rejoice,,,,659
 fable,n.神话，传说；n.谎言，虚构,1. story of upernatural happenings; 2. statement made in order to deceive,,,,660
 faction,n.派系,a party that is often contentious,,,,661
@@ -705,7 +694,7 @@ favorable,adj.有利的,promote,favorable = advantageous + beneficial,favorable 
 forte,n.优势，长处,special talent,,,,707
 fiasco,n.大失败,complete failure,,,,708
 filibuster,n./v.拖延议事,for the purpose of delaying legislative action,,,,709
-flaccid,adj.不结实的，松弛的,lacking firmness,,,,710
+exude,v.分泌，流出,flow forth,exude = radiate + emotion,exude = manifest + visibly,list28,658
 flaw,n.瑕疵，缺点；v.降低，破坏，使不完美,1. imperfection; 2. reduce perfection,,,,711
 fledgling,n.新手,starting out in a field,,,,712
 fleet,adj.迅速的,with great speed,,,,713
@@ -779,7 +768,6 @@ giddy,adj.轻率不严肃的,lacking in seriousness,,,,780
 gild,vt.(带欺骗性地)修改，润色,deceptively attractive,,,,781
 gist,n.要点,main point,,,,782
 glaze,vt.给…上釉，妆点,coat; glaze,,,,783
-glisten,vi.闪光,shine; sparkling,,,,784
 glitch,n.小故障,minor malfunction,,,,785
 gloss,n.简短解释；v.敷衍潦草做事(甚至忽略),1. brief explanation; obscure; 2. too lightly,,,,786
 glutinous,adj.胶状的，粘的,glue,,,,787
@@ -804,7 +792,6 @@ gust,n.情感爆发,sudden intense expression,,,,805
 hack,n.雇佣文人；v.乱砍；开辟,1. writer; commercial; 2. irregular blows,,,,806
 hale,adj.强壮的，健壮的,free from infirmity or illness,,,,807
 half-baked,adj.不明智的,lack of good sense or judgment,,,,808
-hallucination,n.错觉,false idea,,,,809
 ham-handed,adj.笨手笨脚的,lacking dexterity,,,,810
 hammer,v.屡次重申,repeated,,,,811
 hangdog,adj.伤心的，沮丧的,sad; dejected,,,,812
@@ -851,6 +838,7 @@ hamstring,vt.使无效，使无力,ineffective,hamstring = cripple + limit,hamst
 hie,vi.匆匆忙忙,hasten,,,,854
 humbug,n.骗子,deceptive,,,,855
 hilarious,adj.非常好笑的,extremely funny,,,,856
+hallucination,n.错觉,false idea,hallucination = perception + no external stimulus,hallucination = false experience + senses,list28,809
 hive,n.忙碌之地；v.储备，积累,1. activity; 2. store up,,,,857
 hoard,v.贮藏，秘藏,keep hidden,,,,858
 homage,n.尊敬，敬意,respect,,,,859
@@ -865,7 +853,6 @@ hybrid,n.杂交品种，混合品种；adj.杂交的,1. mixed origin; 2. parents
 hymn,n.赞歌，赞美诗,song of praise,,,,868
 hypnotic,adj.催眠的,cause sleep,,,,869
 hypocritical,adj.虚伪的,not being what one appears to be,,,,870
-iconoclast,n.特立独行的人,accepted standards,,,,871
 idolatrize,vt.(通常盲目)崇拜,admires intensely,,,,872
 idyll,n.无忧无虑的生活,carefree episode,,,,873
 ignominy,n.耻辱,lost the esteem,,,,874
@@ -895,7 +882,6 @@ inanimate,adj.无生命的,not living,,,,897
 incandescent,adj.明亮灿烂的；adj.热情饱满的，感情强烈的,1. bright; 2. zeal,,,,898
 incantation,n.咒语,magic power,,,,899
 incarnate,vt.使(思想，理论)具化，体现,constitute an embodiment,,,,900
-incendiary,n.煽动者；adj.煽动性的,1. a person who stirs up; 2. tending to inflame,,,,901
 incense,vt.激怒,extremely angry,,,,902
 implement,vt.执行，实施,carry out,implement = execute + enforce,implement = apply + carry out,list3,903
 hone,vt.提升，改进,improve,hone = sharpen + skill,hone = refine + ability,list5,904
@@ -932,7 +918,6 @@ incorrigible,adj.不可救药的，积习难改的；adj.无法管制的,1. inca
 incriminate,vt.归罪于,accuse of a crime,,,,935
 indelible,adj.无法忘怀的,not easily forgotten,,,,936
 indemnity,n.(损害，伤害等的)保险赔偿,compensation,,,,937
-indigenous,adj.土产的，本地的；adj.与生俱来的，先天的,1. originating; 2. innermost nature,,,,938
 indoctrinate,vt.教育，灌输思想,instruct,,,,939
 indurate,adj.铁石心肠的，冷酷无情的；vt.使变硬,1. a lack of sympathy; 2. physically firm,,,,940
 ineffable,adj.难以表达的,incapable expressed,,,,941
@@ -954,7 +939,6 @@ inimitable,adj.无法仿效的，独特的,not imitated,,,,956
 iniquity,n.邪恶，不公正,immorality injustice,,,,957
 initiate,vt.创始，发动促进,cause beginning,,,,958
 inkling,n.轻微暗示，小提示,slight indication,,,,959
-inquisitive,adj.过分好奇的,inordinately,,,,960
 insensible,adj.无知觉的,lost consciousness,,,,961
 inconsistent,adj.不一致的，矛盾的,not being in agreement,,,,962
 insentient,adj.无感觉的，无知觉的；adj.一知半解的，略懂的,1. lacking perception; 2. not having a deep understanding,,,,963
@@ -1010,7 +994,6 @@ irrigate,vt.灌溉；vt.冲洗,1. supply water; 2. flush,,,,1012
 issue,n.(有争议的)话题，议题；v.(使)流出,1. matter that is in dispute; 2. flow out,,,,1013
 jabber,vi.快而不清楚地说,"talk rapidly, indistinctly",,,,1014
 jape,v.嘲弄,mockingly,,,,1015
-jarring,adj.刺耳的,discordant,,,,1016
 jaundice,n.(因嫉妒或厌世而产生的)偏见,bias,,,,1017
 jaunty,adj.轻快的，活泼的,sprightly,,,,1018
 jettison,vt.放弃，拒绝接受(想法，计划等),get rid of,,,,1019
@@ -1073,14 +1056,14 @@ kindred,adj.类似的；具有相似或相近的起源、本性或性质的,"sim
 licentious,adj.放荡的，性欲强的,lacking restraint,,,,1077
 limber,adj.可塑的，柔软的,flexible,,,,1078
 lissome,adj.柔软的；adj.敏捷的，轻盈的,1. easily bent; 2. move with ease,,,,1079
-list,v.(使)倾斜,at an angle,,,,1080
+list,v.(使)倾斜,at an angle,list = tilt + lean,list = incline + slant,list28,1080
+jarring,adj.刺耳的,discordant,jarring = harsh + grating,jarring = discordant + shrill,list28,1016
 lithe,adj.敏捷的，轻盈的；adj.柔软的,1. grace; 2. easily bent,,,,1081
 lofty,adj.崇高的；adj.自大的,1. elevated; 2. superiority,,,,1082
 loll,vi.偷懒，打发时间,doing nothing,,,,1083
 loutish,adj.粗鲁的,"awkward,stupid,and boorish",,,,1084
 lubricate,vt.使润滑,reduce friction,,,,1085
 lug,vt.费力搬运,laboriously,,,,1086
-lugubrious,adj.(故作夸张的)悲哀的,mournful,,,,1087
 lullaby,vt.使镇静，使安心,free from distress,,,,1088
 lumber,vi.笨拙地行动；vt.使负担(从而拖累),1. clumsiness; 2. burden,,,,1089
 lush,adj.多产的,producing abundantly,,,,1090
@@ -1095,7 +1078,6 @@ maladroit,adj.笨拙的,lack of nimbleness,,,,1098
 malaise,n.不舒服,bodily discomfort,,,,1099
 malcontent,n.不满分子；adj.不满的,1. opposition; 2. dissatisfied,,,,1100
 malign,adj.恶意的；vt.诽谤,1. cause suffering; 2. utter injuriously,,,,1101
-malinger,vi.装病以逃避工作,pretend illness,,,,1102
 mandatory,adj.强制的,forcing compliance,,,,1103
 mangle,vt.弄砸,ruin,,,,1104
 mangy,adj.卑劣的,contemptible,,,,1105
@@ -1158,7 +1140,6 @@ mire,n.困境；vt.使陷入困境，拖后腿,1. difficult situation; 2. hold b
 misanthropic,adj.反人类的,deep distrust of human,,,,1162
 misbehaving,adj.调皮的，行为不端的,childish misbehavior,,,,1163
 mischievous,adj.调皮的，淘气的,naughty teasing,,,,1164
-misconstrue,vi.误解，曲解,mistake,,,,1165
 miscreant,n.恶棍，罪犯,behaves criminally,,,,1166
 misdemeanour,n.轻罪,crime less serious,,,,1167
 mite,n.微小的东西，很少的钱,small object,,,,1168
@@ -1191,7 +1172,6 @@ nauseate,v.(使)厌恶，(使)作呕,cause disgust,,,,1194
 nautical,adj.航海的,water,,,,1195
 naysay,vt.拒绝，否认,"oppose,deny",,,,1196
 negation,n.否定,opposite,,,,1197
-negligent,adj.疏忽大意的,failing care,,,,1198
 negotiate,v.商量，谈判,by mutual agreement,,,,1199
 nerve,n.(坚强的)意志，勇气；vt.给予勇气，鼓励,1. power of endurance; 2. give courage,,,,1200
 neutralize,vt.使无效,make inoperative or ineffective,,,,1201
@@ -1228,10 +1208,10 @@ misgiving,n.担忧，疑虑,doubt,misgiving = doubt + unease,misgiving = concern
 nexus,n.连结；n.核心，最重要的地带,1. connection; 2. greatest importance,nexus = link + connection,nexus = network + bond,list26,1232
 monotonous,adj.无聊的,tediously unvarying,monotonous = repetitive + boring,monotonous = unvaried + tedious,list27,1233
 nurture,vt.培育，培养,provide with understanding,,,,1234
-obdurate,adj.固执的；adj.冷酷无情的,1. resistant influence; 2. lack of sympathy,,,,1235
 obedient,adj.服从的，顺从的,submissive authority,,,,1236
 obliging,adj.乐于助人的,do favors,,,,1237
 obsess,vt.迷住；使困扰,haunt,,,,1238
+misconstrue,vi.误解，曲解,mistake,misconstrue = misunderstand + interpret wrongly,misconstrue = misinterpret + confuse,list28,1165
 odium,n.憎恶，讨厌,strong dislike,,,,1239
 offbeat,adj.不平常的,different from generally found,,,,1240
 offhand,adj.即兴的，没有准备的,without premeditation,,,,1241
@@ -1251,13 +1231,11 @@ overture,n.前言；n.序曲,1. introductory prelude; 2. opera,,,,1254
 oxymoron,n.矛盾修饰法,combination contradictory,,,,1255
 pacify,vt.使平静，安慰,ease the anger,,,,1256
 padding,n.夸张，废话,go beyond the facts,,,,1257
-painstaking,adj.煞费苦心的,diligent care,,,,1258
 palatial,adj.宫殿般奢华的,ornateness,,,,1259
 pall,vi.失去兴趣,interest attraction,,,,1260
 pallid,adj.无生气的，缺乏活力的；adj.苍白无血色的,"1. lacking radiance,vitality; 2. pale",,,,1261
 palmy,adj.繁荣的,prosperity,,,,1262
 palter,vi.欺骗；讨价还价,"insincerely,deceitfully",,,,1263
-paltry,adj.无价值的，微不足道的,important,,,,1264
 pandemic,adj.大范围流行的,widespread,,,,1265
 panoramic,adj.全景的,complete view,,,,1266
 paradise,n.快乐，狂喜,pleasurable emotion,,,,1267
@@ -1309,7 +1287,6 @@ pedant,n.书呆子，墨守成规之人,one to sticks to formal rules,,,,1312
 predestine,vt.预先注定,in advance,,,,1313
 peep,n.一瞥,a brief look,,,,1314
 peeve,v.打扰，惹恼,disdurb the peace of mind,,,,1315
-plaintive,adj.悲伤的,expressing suffering,,,,1316
 penury,n.贫穷；n.吝啬，节俭,1. extreme dearth; 2. extreme frigality,,,,1317
 perambulate,v.徒步穿越，走过,travel over,,,,1318
 perfidy,n.不忠，背信弃义,disloyal,,,,1319
@@ -1332,14 +1309,12 @@ piebald,adj.混合的，杂糅而成的,consisting of different colors,,,,1335
 pigment,n.颜料；v.给…上颜色,1. a subsance that imparts a color; 2. to color with,,,,1336
 pillory,v.当众嘲弄,expose to public contempt,,,,1337
 pilot,adj.初步的，试验性的；v.带领通过,1. seving as a tentative model; 2. lead over a difficult course,,,,1338
-pinnacle,n.顶峰,the highest point,,,,1339
 pinpoint,adj.非常精确的；v.精确定位或确认,1. located with extreme precision; 2. identify with precision,,,,1340
 piquant,adj.令人振奋的,provocative,,,,1341
 pirate,v.盗版，盗用,take without actual right,,,,1342
 pitiless,adj.没有同情心的,devoid of pity,,,,1343
 pittance,n.少量津贴,a small portion,,,,1344
 plangent,adj.凄凉的，哀伤的,plaintive,,,,1345
-plastic,adj.可塑的,susceptible of being modified,,,,1346
 plateau,n.高原；n.稳定时期，平台期,1. raised above area or land; 2. a stable level,,,,1347
 platitude,n.陈词滥调,a banal statement,,,,1348
 prolong,v.延长，拖延,lengthen in extent,,,,1349
@@ -1371,13 +1346,12 @@ pliant,adj.易弯曲的；adj.顺从的,1. easily bent; 2. yielding to influence
 pluck,n.敢于面对困难的勇气,resourceful courage,,,,1375
 plumb,adj.完全的，绝对的；v.仔细深入地检查；探索，探究,1. having no exceptions; 2. examine closely,,,,1376
 plump,adj.丰满的；v.鼎力支持，赞不绝口,1. well-rounded; 2. give full support,,,,1377
+plaintive,adj.悲伤的,expressing suffering,plaintive = sorrowful + mournful,plaintive = melancholy + sad,list28,1316
 polished,adj.有教养的,showing a high degree of refinement,,,,1378
 ponderable,adj.值得考虑的，有价值的,considerable enough to be weighed,,,,1379
 pontificate,v.傲慢地做或说,speak in a pompous way,,,,1380
 pore,v.仔细浏览，仔细研究,read or study attentively,,,,1381
-portentous,adj.预兆性的，凶兆的,showing a sign of evil,,,,1382
 poseur,n.故作姿态、不真诚的人,an affected or insincere person,,,,1383
-postulate,n.假定，假设；v.假定为真,1. something used as a starting point; 2. assume as true,,,,1384
 potable,n.饮品，尤指有酒精饮料；adj.适于饮用的,1. a beverage; 2. suitable for drinking,,,,1385
 potentate,n.有权势的人,one who has the power,,,,1386
 potentiate,v.加强，激活,make more active,,,,1387
@@ -1437,6 +1411,7 @@ propriety,n.适当，得体,the quality of being suitable or fitting,,,,1440
 prosecution,n.实行，执行,the doing of an action,,,,1441
 prospect,v.探查，勘探,go into discovery,,,,1442
 prosperous,adj.成功的，繁盛的,marked by vigorous growth,,,,1443
+portentous,adj.预兆性的，凶兆的,showing a sign of evil,portentous = ominous + forewarning,portentous = significant + predictive,list28,1382
 prostrate,adj./vt.平躺(的)/使平躺；adj./v.衰弱的/使衰竭,1. lying flat; 2. reduce to extreme weakness,,,,1444
 protean,adj.善变的；多才多艺的,versatile,,,,1445
 protract,v.延长，拖长,prolong,,,,1446
@@ -1465,7 +1440,6 @@ pusillanimous,adj.懦弱的，胆小得令人鄙视的,timidity,,,,1468
 quail,vi.胆怯，畏缩,cower,,,,1469
 quarantine,n.隔离,isolation,,,,1470
 quell,vt.压制；vt.使平静，使安静,1. suppress; 2. pacify,,,,1471
-quixotic,adj.不切实际的，空想的,more by ideals than by reality,,,,1472
 quota,n.配额，限额,poroportional,,,,1473
 rabble,n.混乱的人群；暴民；下层民众,disorganized corwd of people,,,,1474
 racy,adj.活泼生动的,vigorous,,,,1475
@@ -1484,7 +1458,6 @@ ratiocination,n.推理,thought processes,,,,1487
 ration,vt.按比例分配,share or portion,,,,1488
 rational,adj.理性的,based on reasoning,,,,1489
 rave,vi.狂热赞扬；vi.(发疯般地)怒吼,1. exaggerated display of affection; 2. talk as if in delirium,,,,1490
-responsive,adj.反应的；敏感的,quick to respond,,,,1491
 quench,vt.熄灭；vt.使满足,1. put out; 2. put a complete end to,quench = satisfy + thirst,quench = douse + put out,list2,1492
 proofread,v.校对,find errors,proofread = review + correct,proofread = check + fix mistakes,list4,1493
 puerile,adj.幼稚的，不成熟的,immature,puerile = childish + silly,puerile = immature + foolish,list6,1494
@@ -1598,7 +1571,6 @@ rickety,adj.不稳的,lacking stability,,,,1601
 rift,n.分裂，不和,break,,,,1602
 ripen,v.使成熟，变成熟,make ripe,,,,1603
 rite,n.惯例，仪式,prescribed form,,,,1604
-riveting,adj.吸引人的，极迷人的,"absorbing,engrossing",,,,1605
 rookie,n.新兵；新手；菜鸟,recruit,,,,1606
 rouse,vt.激起，煽动；vt.唤醒,1. stir up; 2. stop sleeping,,,,1607
 royalty,n.皇家身份；n.版税；专利权税,1. regal character; 2. payment,,,,1608
@@ -1672,7 +1644,6 @@ scurvy,adj.下流的，让人鄙视的,contemptible,,,,1675
 secluded,adj.僻静的，隐蔽的,hidden,,,,1676
 secrete,vt.隐藏；vt.分泌,1. conceal; 2. generate,,,,1677
 sedate,adj.淡定的，安静地,free from agitation,,,,1678
-sedentary,adj.固定不动的,not migratory,,,,1679
 seduce,vt.劝说(使不忠，使不顺从)，诱…误入歧途,persuade,,,,1680
 sedulous,adj.勤奋认真的,careful perseverance,,,,1681
 segment,vt./n.分割；部分,separate,,,,1682
@@ -1691,7 +1662,6 @@ shifty,adj.(显得)狡诈的，(显得)欺诈的,deceitful character,,,,1694
 shadow,vt.偷偷尾随；v.遮蔽，(使)变暗,"1. secretly,trail; 2. gloomy",,,,1695
 shiftless,adj.胸无大志的，懒惰的,lacking ambition,,,,1696
 shipshape,adj.井然有序的,order,,,,1697
-shirk,v.逃避，规避,keep away from,,,,1698
 shoal,adj.浅的,little depth,,,,1699
 shopworn,adj.陈旧的,worn-out,,,,1700
 shred,n.少量,small amount,,,,1701
@@ -1750,7 +1720,6 @@ solder,v.连接，联合,unite,,,,1753
 solemnity,n.庄严，严肃,solemn,,,,1754
 solicitous,adj.为他人操心的，体谅他人的,happiness of others,,,,1755
 solid,adj.有理有据的,sound reasoning,,,,1756
-soliloquy,n.(尤指自言自语的)独白,without addressing a listener,,,,1757
 solitude,n.孤独，避世,being alone,,,,1758
 solvent,adj.有偿付能力的；n.溶剂,1. able to pay debets; 2. another substance is dissolved,,,,1759
 somatic,adj.肉体的,of the body,,,,1760
@@ -1833,25 +1802,20 @@ subjugate,vt.征服，镇压,bring under control,,,,1836
 subliminal,adj.下意识的，潜在意识的,below perception,,,,1837
 submerge,vt.使淹没,under water,,,,1838
 submissive,adj.服从的，顺从的，恭顺的,submitting,,,,1839
-subservient,adj.奉承的，屈从的,obsequiously,,,,1840
 subsidiary,adj.次要的,secondary importance,,,,1841
 subsidy,n.补助金，津贴,monetary,,,,1842
 substantive,adj.本质的，关键的,relating to the essence,,,,1843
 subvert,vt.颠覆,overturn,,,,1844
 suffuse,vt.(色彩等)弥漫，染遍，充满,spread through,,,,1845
 sulk,vi.生气，愠怒,resentment,,,,1846
-sullen,adj.闷闷不乐的,lacking in cheer,,,,1847
 summit,n.顶点,highest point,,,,1848
 summon,vt.召集，召唤,call together,,,,1849
 sunder,vt.分裂，分离,break apart,,,,1850
-superficial,adj.表面的，肤浅的,lacking depth,,,,1851
 stagnant,adj.停滞不前的,not advancing,,,,1852
 supine,adj.懒散的，倦怠的，消极的，漠不关心的,lethargy indifference,,,,1853
-supple,adj.易弯曲的，柔软的,bent; pliant,,,,1854
 supplement,n./v.增补，补充,complete for a deficiency,,,,1855
 supposition,n.猜想，推测,little or no evidence,,,,1856
 surcharge,v./n.过高收费,charge much,,,,1857
-surreptitious,adj.偷偷摸摸的，保密的,escape being observed,,,,1858
 suspend,vi.暂停，中止,bring to a formal close,,,,1859
 suture,n./v.缝合,joining,,,,1860
 svelte,adj.(女人)体态苗条的，优雅的,slim,,,,1861
@@ -1869,7 +1833,6 @@ synergic,adj.合作的，1+1>2的,cooperating,,,,1872
 synopsis,n.摘要，概要,outline; abstract or a summary,,,,1873
 tact,n.机敏，精明，不冒犯,keen sense; maintain good relations,,,,1874
 tactile,adj.有触觉的，能触知的,touch; tangible,,,,1875
-tactless,adj.不机智的，笨拙的,inconsiderate or indiscreet,,,,1876
 tamper,v.恶意窜改，损害,mischievously,,,,1877
 tangent,n./adj.离题(的)，不相关(的),irrelevant,,,,1878
 tangy,adj.刺激的,powerfully stimulating,,,,1879
@@ -1900,6 +1863,9 @@ tardy,adj.缓慢的，迟缓的,slowly,,,,1903
 tasty,adj.美味的；令人愉悦的,pleasure or contentment,,,,1904
 tatty,adj.破旧的，褴褛的,shabby,,,,1905
 taunt,vt.嘲弄性质疑，挑衅,challenge; jeer at,,,,1906
+supple,adj.易弯曲的，柔软的,bent; pliant,supple = flexible + graceful,supple = pliant + agile,list28,1854
+sullen,adj.闷闷不乐的,lacking in cheer,sullen = moody + gloomy,sullen = sulky + morose,list28,1847
+subservient,adj.奉承的，屈从的,obsequiously,subservient = submissive + obedient,subservient = underling + compliant,list28,1840
 taut,adj.紧绷的,not loose,,,,1907
 teeter,vi.蹒跚，不稳定地行走；vi.犹豫不决,1. unsteadily; 2. uncertainty,,,,1908
 temporize,vi.行动躲躲闪闪以争取时间、躲避争论等，打哈哈,act evasively,,,,1909
@@ -1937,7 +1903,6 @@ truce,n.休战，休战协定,suspension of fighting,,,,1940
 trudge,vi.吃力而笨拙地走,heavily or clumsily,,,,1941
 truncate,vt.截短；缩短(时间、篇幅等),shorten,,,,1942
 tumult,n.骚动，暴动,disorderly disturbance,,,,1943
-turbulent,adj.动荡的,disturbance,,,,1944
 turgid,adj.浮夸的，过分装饰的,embellished,,,,1945
 turmoil,n.骚动，混乱,"agitation, commotion",,,,1946
 turncoat,n.叛徒,switched; traitor,,,,1947
@@ -1972,7 +1937,6 @@ uncouth,adj.粗俗的，没有品味的,lacking in refinement,,,,1975
 unctuous,adj.油嘴滑舌的，谄媚的,flattering,,,,1976
 undergird,vt.加强，巩固…的底部,strengthen,,,,1977
 unexceptionable,adj.无懈可击的,beyond reproach,,,,1978
-unimpeachable,adj.无可置疑的,unquestionable,,,,1979
 unlettered,adj.未受教育的，文盲的,deficient in the knowledge; illiterate,,,,1980
 unpretentious,adj.低调的，谦逊的；adj.坦诚的，自然的,1. modest; 2. free from deceive,,,,1981
 unsung,adj.被埋没的，不知名的,not celebrated,,,,1982
@@ -1999,10 +1963,8 @@ verse,vt.使精通，使熟悉；n.诗歌,1. familiarize ; 2. rhythm lyrical eff
 vocation,n.职业,employed,,,,2003
 veteran,n.老兵；有丰富经验的人；adj.经验丰富的，资深的,"1. knowledge through long experience; 2. knowledge, experiences",,,,2004
 vex,vt.使烦恼，使恼怒,bring agitation,,,,2005
-vicious,adj.凶恶的，恶毒的,desire to inflict,,,,2006
 victimize,vt.使受骗,subject to deception,,,,2007
 vignette,n.简介，短文,vivid representation,,,,2008
-vigorous,adj.精力旺盛的,active strength,,,,2009
 vim,n.活力，精力,energy,,,,2010
 vindictive,adj.复仇的，有寻仇倾向的,seek revenge,,,,2011
 virtuous,adj.品德高尚的，正直的,showing moral excellence,,,,2012
@@ -2047,12 +2009,10 @@ wan,adj.苍白的，病态的,poor health,,,,2050
 warble,v.柔和地唱歌,sing with melodic embellishments,,,,2051
 warmonger,n.好战者,urges war,,,,2052
 warp,vt.曲解,alter the meaning,,,,2053
-warrant,vt.批准，认可,give official acceptance,,,,2054
 wastrel,n.肆意挥霍的人，败家子,expends self-indulgently,,,,2055
 wax,vi.增大，增强,increase,,,,2056
 waylay,vt.埋伏，伏击,attack,,,,2057
 wheedle,v.(用花言巧语)诱惑，哄骗,persuade by flattery,,,,2058
-whet,vt.刺激，激起,make more acute,,,,2059
 wicked,adj.邪恶的,morally bad,,,,2060
 wince,vi.畏缩,shrink back from pain,,,,2061
 windbag,n.健谈的人,talkative,,,,2062
@@ -2073,7 +2033,6 @@ yokel,n.乡下人，天真纯朴的人,inhabitant of a rural area,,,,2076
 zeal,n.热心，热诚,enthusiastic devotion,,,,2077
 zesty,adj.刺激的，开胃的,piquant,,,,2078
 appurtenance,n.附属物,subordinate,,,,2079
-apostle,n.(政策或思想等的)信奉者，支持者,actively supports,,,,2080
 accustom,vt.使习惯,make familiar with,,,,2081
 acquire,vt.获取，获得,get as one's own,,,,2082
 adversity,n.厄运，逆境,difficulty,,,,2083
@@ -2191,7 +2150,6 @@ dichotomy,n.对立,division into two,,,,2194
 dictate,vt.(仗着地位、权力)下令,request,,,,2195
 disjunctive,adj.分离的,breaks disunity,,,,2196
 disprove,vt.反驳，证明为假,prove to be false,,,,2197
-distinctive,adj.完全不同的；adj.特征性的，典型的,1. not of the same kind; 2. serving to identify,,,,2198
 domineer,vt.专制统治,overbearing control,,,,2199
 drab,adj.单调的，无聊的,dullness and monotony,,,,2200
 dread,n.恐惧,fear,,,,2201
@@ -2247,8 +2205,7 @@ lag,v.缓慢行走；v.萎靡，失去活力,1. proceed with slowness; 2. lose b
 lance,vt.刺穿，刺破,penetrate with a pointed object,,,,2252
 lax,adj.松弛的，不紧的，不严格的；adj.懈怠的，漫不经心的,1. not rigid; 2. failing to give proper care,,,,2253
 luminous,adj.杰出的，重要的,standing above,,,,2254
-lurid,adj.恐怖的，令人反感的,causing revulsion,,,,2255
-madcap,n.热爱冒险的人；adj.大胆的，鲁莽的,1. one who seeks out dangerous adventures; 2. foolishly bold,,,,2256
+lurid,adj.恐怖的，令人反感的,causing revulsion,lurid = shocking + horrifying,lurid = sensational + grim,list28,2255
 magnitude,n.重要，重大,greatness in significance,,,,2257
 malevolent,adj.恶意的，恶毒的,vicious,,,,2258
 marginal,adj.不重要的,not of central importance,,,,2259
@@ -2265,7 +2222,6 @@ oaf,n.愚蠢的人,a stupid person,,,,2269
 observant,adj.警惕的，警觉的；adj.严格遵守(规章、制度或原则)的,1. paying close attentions; 2. diligent in obseving a law,,,,2270
 ordeal,n.严峻的考验,a severe trial,,,,2271
 outgrowth,n.结果，后果,a condition traceable to a cause,,,,2272
-overwhelm,v.淹没,cover with a flood,,,,2273
 palaver,n.对话，交流；v.闲聊,1. an exchange of views; 2. talk profusely,,,,2274
 palpitation,n.(有节奏的)舒张收缩,an expanding and contracting,,,,2275
 peculiarity,n.特征，特点,a distinguishing characteristic,,,,2276
@@ -2273,7 +2229,6 @@ peel,v.脱去(衣服等),take off one's clothes,,,,2277
 perceptive,adj.敏锐的,able to sense slight differences,,,,2278
 perquisite,n.额外的好处,something given in addition to what is originally expected,,,,2279
 pioneer,n.扩荒者，先驱者；v.开创，创造,1. one of the first to settle in a country; 2. open up an area,,,,2280
-pious,adj.(信仰上)虔诚的,showing devotion to divine worship,,,,2281
 playful,adj.爱开玩笑的,joking or teasing,,,,2282
 plush,adj.奢华的，豪华的,notably luxurious,,,,2283
 poach,vt.水煮,cook in a liquid,,,,2284
@@ -2315,6 +2270,7 @@ screen,n.掩护物，屏障；v.掩护，遮蔽,1. something that shelters; 2. s
 scrimp,v.节俭,avoid wastes,,,,2320
 sectarianism,n.宗派主义，顽固,adherence to prejudices,,,,2321
 simile,n.明喻,a figure of speech comparing to unlike things,,,,2322
+pious,adj.(信仰上)虔诚的,showing devotion to divine worship,pious = devout + religious,pious = faithful + reverent,list28,2281
 sparing,adj.节俭的，节约的,marked by careful restraint,,,,2323
 splutter,v.急切而不清楚地说,speak hastily and incoherently,,,,2324
 squeamish,adj.恶心的，晕船的,affected with nausea,,,,2325
@@ -2331,7 +2287,6 @@ thick-skinned,adj.冷漠无情的，不顾及他人感受的,largely unaffected 
 tycoon,n.大亨，巨头,"a person of rank, power, or influence",,,,2336
 unanimous,adj.一致同意的,having the consent of all,,,,2337
 unavailing,adj.徒劳的，无果的,producing no results,,,,2338
-unremitting,adj.连续不断的,going on without any interruptions,,,,2339
 vouchsafe,v.允诺，给予,grant in a gracious manner,,,,2340
 willy-nilly,adj.无秩序的，随意的,without order,,,,2341
 wiretap,n./vt.偷听，窃听,tap a telephone in order to get information,,,,2342
@@ -4405,3 +4360,89 @@ seethe,v. 激动,to be filled with intense but unexpressed anger,seethe = simmer
 compound,v.加剧,to make worse,compound = worsen + intensify,compound = aggravate + exacerbate,list21,3895
 hermetic,adj.密封的，与世隔绝的,impervious to external influence,hermetic = airtight + sealed,hermetic = impermeable + closed,list24,850
 clerical,adj.神职的,relating to the clergy or church officials,clerical = religious + clergy,clerical = ecclesiastical + church,list26,4309
+banal,adj.非原创的，陈腐的,trite,banal = common + unoriginal,banal = cliché + overused,list28,146
+plastic,adj.可塑的,susceptible of being modified,plastic = flexible + formable,plastic = adaptable + changeable,list28,1346
+infringe,v.侵犯,"to actively break the terms of a law, agreement, etc.; to encroach upon someone’s rights",infringe = violate + rights,infringe = breach + law,list28,4409
+signify,v. 表示，意味,to be an indication of; to mean,signify = indicate + meaning,signify = represent + symbol,list28,4410
+flaccid,adj.不结实的，松弛的,lacking firmness,flaccid = soft + weak,flaccid = limp + loose,list28,710
+interrelated,adj. 相关的，互相关联的,having a mutual or reciprocal relation or connection,interrelated = connected + mutually,interrelated = interconnected + dependent,list28,4411
+responsive,adj.反应的；敏感的,quick to respond,responsive = quick + reaction,responsive = attentive + reactive,list28,1491
+impinge,v. 影响，妨碍；v. 侵犯，侵害,"1. to have an effect or impact, especially a negative one; 2. to encroach or infringe upon (someone's rights or territory)",impinge = influence + interfere,impinge = infringe + boundary,list28,4412
+disregard,vt.漠视，不关注；n.缺乏兴趣，缺乏关心,1. no attention; 2. lack of interest or concern,disregard = ignore + attention,disregard = neglect + overlook,list28,509
+unfeeling,adj. 无情的，冷酷的,lacking sympathy or compassion; indifferent or harsh,unfeeling = emotionless + indifferent,unfeeling = heartless + insensitive,list28,4413
+intensity,n. 强度，力度,"the quality of being intense; extreme force, degree, or strength",intensity = strength + force,intensity = degree + extremity,list28,4414
+plentiful,adj. 丰富的，大量的,existing in great quantities; abundant,plentiful = abundant + numerous,plentiful = ample + bountiful,list28,4415
+appease,v. 安抚，平息,"to bring to a state of peace, quiet, or calm; to pacify or soothe",appease = calm + soothe,appease = pacify + alleviate,list28,4416
+sedentary,adj.固定不动的,not migratory,sedentary = inactive + seated,sedentary = stationary + sitting,list28,1679
+oversell,v. 过度吹嘘；v. 超额销售,1. to make excessive claims about the value or importance of something; 2. to sell more of something than can be supplied or to sell too much,oversell = exaggerate + claims,oversell = overbook + supply,list28,4417
+striking,adj. 引人注目的，显著的,"attracting attention by being unusual, extreme, or prominent",striking = noticeable + impressive,striking = remarkable + attention-grabbing,list28,4418
+flip,adj. 轻率的，无礼的,showing a lack of respect or seriousness; flippant,flip = disrespectful + casual,flip = impertinent + irreverent,list28,4419
+indefatigable,adj. 不屈不挠的，不知疲倦的,persisting tirelessly; showing sustained enthusiastic action with unflagging vitality,indefatigable = tireless + persistent,indefatigable = unrelenting + energetic,list28,4420
+madcap,n.热爱冒险的人；adj.大胆的，鲁莽的,1. one who seeks out dangerous adventures; 2. foolishly bold,madcap = reckless + impulsive,madcap = wild + daring,list28,2256
+distinctive,adj.完全不同的；adj.特征性的，典型的,1. not of the same kind; 2. serving to identify,distinctive = unique + characteristic,distinctive = distinguishing + individual,list28,2198
+surreptitious,adj.偷偷摸摸的，保密的,escape being observed,surreptitious = secret + stealthy,surreptitious = covert + hidden,list28,1858
+unremitting,adj.连续不断的,going on without any interruptions,unremitting = constant + relentless,unremitting = persistent + unceasing,list28,2339
+claustrophobia,n. 幽闭恐惧症,an irrational fear of confined or enclosed spaces,claustrophobia = fear + enclosed spaces,claustrophobia = anxiety + confinement,list28,4421
+solemn,adj. 庄严的，严肃的,formal and dignified; serious,solemn = serious + dignified,solemn = formal + grave,list28,4422
+extravagant,adj.挥霍的；adj.过度的，不必要的,1. spending money freely; 2. beyond normal limit,extravagant = excessive + unreasonable,extravagant = exaggerated + extreme,list28,656
+tactless,adj.不机智的，笨拙的,inconsiderate or indiscreet,tactless = insensitive + blunt,tactless = undiplomatic + careless,list28,1876
+cliquish,adj.小集团的,bound by very close association,cliquish = exclusive + unfriendly,cliquish = insular + selective,list28,229
+warrant,vt.批准，认可,give official acceptance,warrant = justify + necessitate,warrant = guarantee + assure,list28,2054
+accustomed,adj. 习惯的，通常的,familiar with something so that it seems normal or usual; used to,accustomed = familiar + used to,accustomed = habitual + routine,list28,4423
+deliberate,adj.深思熟虑的,careful,deliberate = intentional + planned,deliberate = careful + thoughtful,list28,427
+whisk,v. 迅速带走，迅速移动,to take or move (someone or something) in a particular direction suddenly and quickly,whisk = move + quickly,whisk = transport + swiftly,list28,4424
+impressionable,adj. 易受影响的，易感的,easily influenced because of a lack of critical ability,impressionable = easily influenced + susceptible,impressionable = receptive + naive,list28,4425
+muckrake,v. 揭发丑闻,"to search for and expose real or alleged corruption, scandal, or other wrongdoing, especially in politics",muckrake = expose + scandal,muckrake = investigate + corruption,list28,4426
+whet,vt.刺激，激起,make more acute,whet = stimulate + appetite,whet = arouse + interest,list28,2059
+provision,n. 供应，提供,the action of providing or supplying something for use,provision = supply + provide,provision = furnish + resources,list28,4427
+adroit,adj. 熟练的，灵巧的,clever or skillful in using the hands or mind,adroit = skillful + clever,adroit = adept + dexterous,list28,4428
+postulate,n.假定，假设；v.假定为真,1. something used as a starting point; 2. assume as true,postulate = assume + hypothesis,postulate = propose + premise,list28,1384
+abysmal,adj.(程度)很深的；极端的,immeasurably great,abysmal = terrible + profound,abysmal = awful + immense depth,list28,10
+riveting,adj.吸引人的，极迷人的,"absorbing,engrossing",riveting = captivating + engrossing,riveting = fascinating + compelling,list28,1605
+obdurate,adj.固执的；adj.冷酷无情的,1. resistant influence; 2. lack of sympathy,obdurate = stubborn + unyielding,obdurate = inflexible + adamant,list28,1235
+superficial,adj.表面的，肤浅的,lacking depth,superficial = surface + shallow,superficial = shallow + insubstantial,list28,1851
+insolvent,adj. 破产的，无力偿还债务的,unable to pay debts owed,insolvent = bankrupt + unable to pay,insolvent = financially ruined + in debt,list28,4429
+aggrandize,vt.增加、提高(力量、财富、地位、声誉)等,enhance,aggrandize = enhance + power,aggrandize = amplify + status,list28,27
+quixotic,adj.不切实际的，空想的,more by ideals than by reality,quixotic = idealistic + impractical,quixotic = unrealistic + romantic,list28,1472
+derive,v. 起源于，来自,"to have a specified word, phrase, or form of language as a root or origin",derive = originate + base,derive = stem + root,list28,4430
+provocative,adj. 挑衅的，煽动的,"causing annoyance, anger, or another strong reaction, especially deliberately",provocative = inciting + reaction,provocative = inflammatory + arousing,list28,4431
+guild,n. 行会，协会,an association of people for mutual aid or the pursuit of a common goal,guild = association + common goal,guild = organization + mutual aid,list28,4432
+essential,adj. 必不可少的，基本的,absolutely necessary; extremely important,essential = necessary + vital,essential = fundamental + indispensable,list28,4433
+memorandum,n. 备忘录，备忘条,"a written message, especially in business or diplomacy",memorandum = written note + reminder,memorandum = message + business,list28,4434
+apostle,n.(政策或思想等的)信奉者，支持者,actively supports,apostle = advocate + pioneer,apostle = proponent + leader,list28,2080
+outlaw,v. 宣布……为非法，禁止,to make something illegal,outlaw = ban + illegal,outlaw = prohibit + criminalize,list28,4435
+forgo,v. 放弃，摒绝,to decide not to do or have something,forgo = give up + willingly,forgo = refrain + voluntarily,list28,4436
+identical,adj. 完全相同的，一模一样的,similar in every detail; exactly alike,identical = same + exact,identical = duplicate + alike,list28,4437
+interlocutor,n. 对话者，参与对话的人,a person who takes part in a conversation or dialogue,interlocutor = conversation + participant,interlocutor = dialogue + speaker,list28,4438
+gut-level,adj. 本能的，直觉的,based on instinct or deep-seated emotion rather than logic or reason,gut-level = instinctive + emotional,gut-level = intuitive + visceral,list28,4439
+indigenous,adj.土产的，本地的；adj.与生俱来的，先天的,1. originating; 2. innermost nature,indigenous = native + local,indigenous = original + endemic,list28,938
+glisten,vi.闪光,shine; sparkling,glisten = shine + sparkle,glisten = shimmer + glimmer,list28,784
+iconoclast,n.特立独行的人,accepted standards,iconoclast = critic + rebel,iconoclast = nonconformist + radical,list28,871
+soliloquy,n.(尤指自言自语的)独白,without addressing a listener,soliloquy = monologue + alone,soliloquy = speech + introspective,list28,1757
+vigorous,adj.精力旺盛的,active strength,vigorous = energetic + strong,vigorous = robust + dynamic,list28,2009
+besmirch,v.诽谤，玷污,detract from the honor,besmirch = tarnish + reputation,besmirch = defame + slander,list28,161
+vain,adj. 自负的，虚荣的；adj. 徒劳的，无效的,"1. having or showing an excessively high opinion of one's appearance, abilities, or worth; 2. producing no result; useless",vain = egotistical + proud,vain = futile + ineffective,list28,4440
+vicious,adj.凶恶的，恶毒的,desire to inflict,vicious = cruel + violent,vicious = savage + brutal,list28,2006
+cursory,adj.匆忙的，不注意细节的,excessive or careless speed,cursory = hasty + superficial,cursory = brief + incomplete,list28,373
+hail,v. 欢呼，致敬,to greet or acclaim enthusiastically,hail = greet + enthusiastically,hail = acclaim + praise,list28,4441
+odious,adj. 可憎的，令人作呕的,extremely unpleasant; repulsive,odious = hateful + repugnant,odious = detestable + offensive,list28,4442
+unimpeachable,adj.无可置疑的,unquestionable,unimpeachable = unquestionable + trustworthy,unimpeachable = flawless + reliable,list28,1979
+negligent,adj.疏忽大意的,failing care,negligent = careless + inattentive,negligent = neglectful + irresponsible,list28,1198
+pinnacle,n.顶峰,the highest point,pinnacle = peak + highest point,pinnacle = summit + apex,list28,1339
+lugubrious,adj.(故作夸张的)悲哀的,mournful,lugubrious = mournful + gloomy,lugubrious = sorrowful + melancholy,list28,1087
+incisive,adj. 深刻的，敏锐的,intelligently analytical and clear-thinking; sharply focused and insightful,incisive = sharp + insightful,incisive = keen + perceptive,list28,4443
+shirk,v.逃避，规避,keep away from,shirk = avoid + responsibility,shirk = evade + obligation,list28,1698
+painstaking,adj.煞费苦心的,diligent care,painstaking = meticulous + thorough,painstaking = diligent + careful,list28,1258
+nepotism,n. 任人唯亲，裙带关系,"the practice among those with power or influence of favoring relatives or friends, especially by giving them jobs",nepotism = favoritism + relatives,nepotism = bias + family connections,list28,4444
+turbulent,adj.动荡的,disturbance,turbulent = chaotic + unstable,turbulent = tumultuous + disorderly,list28,1944
+hitch,n. 问题，故障,a temporary interruption or problem,hitch = problem + delay,hitch = snag + interruption,list28,4445
+instantaneous,adj. 瞬间的，即刻的,occurring or done in an instant or instantly,instantaneous = immediate + momentary,instantaneous = rapid + sudden,list28,4446
+inquisitive,adj.过分好奇的,inordinately,inquisitive = curious + questioning,inquisitive = eager to learn + nosy,list28,960
+malinger,vi.装病以逃避工作,pretend illness,malinger = pretend + illness,malinger = feign + avoid work,list28,1102
+overwhelm,v.淹没,cover with a flood,overwhelm = overpower + defeat,overwhelm = overload + fluster,list28,2273
+incendiary,n.煽动者；adj.煽动性的,1. a person who stirs up; 2. tending to inflame,incendiary = fire + provoking,incendiary = inflammatory + explosive,list28,901
+retiring,adj. 害羞的，腼腆的,shy and fond of being alone,retiring = shy + introverted,retiring = reserved + withdrawn,list28,4447
+paltry,adj.无价值的，微不足道的,important,paltry = insignificant + small,paltry = worthless + contemptible,list28,1264
+artifice,"n. 诡计, 狡诈",clever or cunning devices used to trick or deceive others,artifice = trickery + cleverness,artifice = deceit + ingenuity,list28,4448
+didactic,adj.喜欢说教的，思修的,teach,didactic = preachy + lecturing,didactic = instructive + patronizing,list28,463
+regular,adj. 定期的，有规律的,occurring at fixed intervals,regular = periodic + consistent,regular = scheduled + frequent,list28,4449
