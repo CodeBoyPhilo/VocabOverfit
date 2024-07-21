@@ -216,7 +216,7 @@ if session.vocab_list is not None:
         session.ve_prev_vocab_list = session.vocab_list
         session.ve_cur_v_idx = 0
         session.ve_first_q = True
-        session.key_in_answer = ""
+        session.ve_cmd = ""
 
 session.ve_answer_mode = st.sidebar.radio("Answer Mode:", ["selection", "key-in"])
 
