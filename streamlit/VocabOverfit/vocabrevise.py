@@ -333,12 +333,12 @@ try:
                 session.vr_current_vocab = session.vr_revise_data.iloc[
                     session.vr_cur_v_idx, :
                 ]
+                show_vocab(session.vr_current_vocab)
                 left, right = st.columns([0.3, 0.7])
                 with left:
-                    show_vocab(session.vr_current_vocab)
                     show_definition(session.vr_current_vocab)
                 with right:
-                    st.markdown("## ")  # placeholder for visual enhancements
+                    # st.markdown("## ")  # placeholder for visual enhancements
                     show_equation(session.vr_current_vocab)
 
                 st.markdown(

@@ -187,18 +187,17 @@ if session.v2m_cur_v_idx + 1 > session.v2m_n_vocab:
     show_exit_message()
 else:
     session.v2m_current_vocab = session.v2m_list_data.iloc[session.v2m_cur_v_idx, :]
+    show_vocab(session.v2m_current_vocab)
     if session.v2m_mode == "study":
         left, right = st.columns([0.3, 0.7])
         with left:
-            show_vocab(session.v2m_current_vocab)
             show_definition(session.v2m_current_vocab)
         with right:
-            st.markdown("## ")  # placeholder for visual enhancements
+            # st.markdown("## ")  # placeholder for visual enhancements
             show_equation(session.v2m_current_vocab)
     else:
         left, right = st.columns(2)
         with left:
-            show_vocab(session.v2m_current_vocab)
             show_equation(session.v2m_current_vocab)
         with right:
             click_show_definition = st.button(
