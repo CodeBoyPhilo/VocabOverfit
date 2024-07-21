@@ -241,12 +241,16 @@ try:
     # ==============================
 
     # -------Sidebar Element-------
-    session.vr_mode = st.sidebar.radio("**Study Mode**", ["revise", "test"])
+    with st.sidebar:
+        side_left, side_right = st.columns(2)
 
-    if session.vr_mode == "test":
-        session.vr_answer_mode = st.sidebar.radio(
-            "Answer Mode", ["selection", "key-in"]
-        )
+        with side_left:
+            session.vr_mode = st.radio("**Study Mode**", ["revise", "test"])
+        with side_right:
+            if session.vr_mode == "test":
+                session.vr_answer_mode = st.radio(
+                    "Answer Mode", ["selection", "key-in"]
+                )
 
     data = pd.read_csv(DATA_DIR)
     data = data[data["list"].isnull() == False]
