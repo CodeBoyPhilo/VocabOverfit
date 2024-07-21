@@ -184,6 +184,7 @@ if session.v2m_cur_v_idx + 1 > session.v2m_n_vocab:
 else:
     session.v2m_current_vocab = session.v2m_list_data.iloc[session.v2m_cur_v_idx, :]
     if session.v2m_mode == "study":
+        left, right = st.columns(2)
         with left:
             show_vocab(session.v2m_current_vocab)
             show_definition(session.v2m_current_vocab)
