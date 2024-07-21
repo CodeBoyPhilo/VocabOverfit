@@ -49,6 +49,8 @@ def show_definition(current_vocab: DataFrame):
     ch_meaning = current_vocab["ch_meaning"].split("；")  # Chinese semicolon
     en_meaning_full = current_vocab["en_meaning"]
     if "1" not in en_meaning_full:
+        if en_meaning_full[-1] == ".":
+            en_meaning_full = en_meaning_full[:-1]
         en_meaning = [en_meaning_full]
     else:
         pattern = r"\d+\.\s*([^;]+)(?:;|\s|$)"
