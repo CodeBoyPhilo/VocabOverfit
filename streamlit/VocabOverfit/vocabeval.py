@@ -50,13 +50,13 @@ def show_question():
     with left:
         st.markdown(f"## {session.ve_current_vocab['vocabulary']}")
 
-        if session.answer_mode == "selection":
+        if session.ve_answer_mode == "selection":
             session.ve_selected = st.radio(
                 "dummy label", session.ve_options, label_visibility="hidden", index=None
             )
         else:
             for key, opt in zip(["a", "s", "d", "f"], session.ve_options):
-                st.write(f"`{key}` - {opt}")
+                st.write(f"`{key}`: {opt}")
     with right:
         show_metric()
 
@@ -65,7 +65,7 @@ def check_answer():
 
     session.ve_answered_cur_q = False
 
-    if session.answer_mode == "selection":
+    if session.ve_answer_mode == "selection":
 
         if st.button("Submit", type="primary", use_container_width=True):
             session.ve_n_finished += 1
@@ -183,6 +183,8 @@ if "ve_first_q" not in session:
     session.ve_first_q = True
 if "ve_key_in_answer" not in session:
     session.ve_key_in_answer = ""
+if "ve_cmd" not in session:
+    session.ve_cmd = session.ve_key_in_answer
 # ==============================
 # MAIN APP EXECUTION STARTS HERE
 # ==============================
@@ -216,7 +218,7 @@ if session.vocab_list is not None:
         session.ve_first_q = True
         session.key_in_answer = ""
 
-session.answer_mode = st.sidebar.radio("Answer Mode:", ["selection", "key-in"])
+session.ve_answer_mode = st.sidebar.radio("Answer Mode:", ["selection", "key-in"])
 
 if st.sidebar.button("**Start**", type="primary", use_container_width=True):
     session.ve_start = True
@@ -228,7 +230,7 @@ if st.sidebar.button("**Start**", type="primary", use_container_width=True):
 
 if session.ve_start:
 
-    if session.answer_mode == "selection":
+    if session.ve_answer_mode == "selection":
 
         left, right = st.columns(2)
 
