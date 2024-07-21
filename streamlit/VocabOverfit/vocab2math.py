@@ -49,6 +49,8 @@ def query(query_vocab):
             ch_meaning = vocab["ch_meaning"].values[0].split("；")  # Chinese semicolon
             en_meaning_full = vocab["en_meaning"].values[0]
             if "1" not in en_meaning_full:
+                if en_meaning_full[-1] == ".":
+                    en_meaning_full = en_meaning_full[:-1]
                 en_meaning = [en_meaning_full]
             else:
                 pattern = r"\d+\.\s*([^;]+)(?:;|\s|$)"
@@ -84,6 +86,8 @@ def show_definition(current_vocab: DataFrame):
     ch_meaning = current_vocab["ch_meaning"].split("；")  # Chinese semicolon
     en_meaning_full = current_vocab["en_meaning"]
     if "1" not in en_meaning_full:
+        if en_meaning_full[-1] == ".":
+            en_meaning_full = en_meaning_full[:-1]
         en_meaning = [en_meaning_full]
     else:
         pattern = r"\d+\.\s*([^;]+)(?:;|\s|$)"
@@ -184,7 +188,7 @@ if session.v2m_cur_v_idx + 1 > session.v2m_n_vocab:
 else:
     session.v2m_current_vocab = session.v2m_list_data.iloc[session.v2m_cur_v_idx, :]
     if session.v2m_mode == "study":
-        left, right = st.columns(2)
+        left, right = st.columns([0.3, 0.7])
         with left:
             show_vocab(session.v2m_current_vocab)
             show_definition(session.v2m_current_vocab)
