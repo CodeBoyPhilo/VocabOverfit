@@ -267,6 +267,10 @@ try:
         session.vr_prev_vocab_list = session.vocab_list
         session.vr_cur_v_idx = 0
         session.first_q = True
+        session.vr_cmd = ""
+        session.vr_n_correct = 0
+        session.vr_n_finished = 0
+        session.vr_correct_rate_tracker = [0]
 
     if session.vr_n_vocab != 0:
 
