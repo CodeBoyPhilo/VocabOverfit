@@ -67,24 +67,24 @@ def show_definition(current_vocab: DataFrame):
 
 
 def _parse_option(opt):
-    return opt.split("=")[1]
+    if "=" in opt:
+        return opt.split("=")[1]
+    else:
+        return opt
 
 
 def make_question():
-    eq_idx = random.randint(1, 2)
+    choice_type = random.randint(0, 1)
+    if choice_type == 0:
+        choice = "ch_meaning"
+    else:
+        eq_idx = random.randint(1, 2)
+        choice = f"equation_{eq_idx}"
 
-    session.vr_correct_opt = _parse_option(
-        session.vr_current_vocab[f"equation_{eq_idx}"]
-    )
-    session.vr_opt_1 = _parse_option(
-        session.vr_other_data.sample(1)[f"equation_{eq_idx}"].values[0]
-    )
-    session.vr_opt_2 = _parse_option(
-        session.vr_other_data.sample(1)[f"equation_{eq_idx}"].values[0]
-    )
-    session.vr_opt_3 = _parse_option(
-        session.vr_other_data.sample(1)[f"equation_{eq_idx}"].values[0]
-    )
+    session.vr_correct_opt = _parse_option(session.vr_current_vocab[choice])
+    session.vr_opt_1 = _parse_option(session.vr_other_data.sample(1)[choice].values[0])
+    session.vr_opt_2 = _parse_option(session.vr_other_data.sample(1)[choice].values[0])
+    session.vr_opt_3 = _parse_option(session.vr_other_data.sample(1)[choice].values[0])
     session.vr_options = [
         session.vr_correct_opt,
         session.vr_opt_1,
