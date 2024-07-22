@@ -206,7 +206,7 @@ SCRIPT_DIR = Path(__file__).parent
 DATA_DIR = SCRIPT_DIR / "gre_3000.csv"
 HISTORY_DIR = os.path.expanduser("~/.streamlit/history")
 ERROR_MSG = """
-You havr not studied **anything**!
+You have not studied **anything**!
 
 you must select a list to study and evaluate first, before you can revise anything!
 """

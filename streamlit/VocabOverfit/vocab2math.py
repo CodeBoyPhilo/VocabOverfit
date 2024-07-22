@@ -7,32 +7,6 @@ from pandas import DataFrame
 import streamlit as st
 from streamlit import session_state as session
 
-# def show_greeting_message():
-#
-#     html_content = """
-#     # <a href="#"><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px" height="25px"></a> Welcome to Vocab2Math!
-#     """
-#     acknowledgement = """
-#     ## 	:bulb: Acknowledgement
-#     The vocabulary details are adapted from [**liurui39660/3000**](https://github.com/liurui39660/3000) and **张巍老师GRE**.
-#     """
-#
-#     how_to_use = """
-#     ## 	:package: How to use?
-#     1. Select `study` mode first
-#     2. Try to memorise the Chinese definition of the word make sense of the vocab equations
-#     3. Select `revise` mode next
-#     4. Try to recall the Chinese definition of the word
-#     5. Use the vocab equations as hints!
-#     """
-#
-#     st.sidebar.markdown(html_content, unsafe_allow_html=True)
-#     st.sidebar.markdown("")
-#     st.sidebar.markdown("by: [CodeBoyPhilo](https://github.com/CodeBoyPhilo)")
-#     st.sidebar.divider()
-#     st.sidebar.markdown(acknowledgement)
-#     st.sidebar.markdown(how_to_use)
-
 
 def query(query_vocab):
     if query_vocab != "":
@@ -187,8 +161,8 @@ if session.v2m_cur_v_idx + 1 > session.v2m_n_vocab:
     show_exit_message()
 else:
     session.v2m_current_vocab = session.v2m_list_data.iloc[session.v2m_cur_v_idx, :]
-    show_vocab(session.v2m_current_vocab)
     if session.v2m_mode == "study":
+        show_vocab(session.v2m_current_vocab)
         left, right = st.columns([0.3, 0.7])
         with left:
             show_definition(session.v2m_current_vocab)
@@ -198,6 +172,7 @@ else:
     else:
         left, right = st.columns(2)
         with left:
+            show_vocab(session.v2m_current_vocab)
             show_equation(session.v2m_current_vocab)
         with right:
             click_show_definition = st.button(
