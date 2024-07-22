@@ -140,6 +140,12 @@ def check_answer():
         if session.vr_selected == session.vr_correct_opt:
             st.write(":green[**Fantastic!**]")
             session.vr_n_correct += 1
+
+            session.vr_cur_history[session.vr_current_vocab["vocabulary"]] -= 1
+
+            if session.vr_cur_history[session.vr_current_vocab["vocabulary"]] == 0:
+                session.vr_cur_history.pop(session.vr_current_vocab["vocabulary"])
+
         else:
             text = f"""
             :red[**Wrong** - {session.vr_selected}]\n
