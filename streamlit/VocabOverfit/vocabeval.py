@@ -1,6 +1,7 @@
 import json
 import os
 import random
+import re
 from pathlib import Path
 
 import numpy as np
@@ -9,6 +10,27 @@ from pandas import DataFrame
 
 import streamlit as st
 from streamlit import session_state as session
+
+
+def show_definition(current_vocab: DataFrame):
+    ch_meaning = current_vocab["ch_meaning"].split("；")  # Chinese semicolon
+    en_meaning_full = current_vocab["en_meaning"]
+    if "1" not in en_meaning_full:
+        if en_meaning_full[-1] == ".":
+            en_meaning_full = en_meaning_full[:-1]
+        en_meaning = [en_meaning_full]
+    else:
+        pattern = r"\d+\.\s*([^;]+)(?:;|\s|$)"
+        en_meaning = re.findall(pattern, en_meaning_full)
+
+    # st.markdown("**Definition:**")
+    for ch, en in zip(ch_meaning, en_meaning):
+
+        meaning = f"""
+                {ch.strip()}\\
+                {en.split('.')[-1]}
+        """
+        st.markdown(meaning)
 
 
 def _parse_option(opt):
@@ -95,7 +117,13 @@ def check_answer():
             :red[**Wrong** - {session.ve_selected}]\n
             :green[**Correct** - {session.ve_correct_opt}]
             """
-            st.write(text)
+
+            left, right = st.columns(2)
+            with left:
+                st.write(text)
+            with right:
+                show_definition(session.ve_current_vocab)
+
             session.ve_cur_history[session.ve_current_vocab["vocabulary"]] = 3
 
         session.ve_correct_rate_tracker.append(
