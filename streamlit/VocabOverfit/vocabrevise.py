@@ -68,7 +68,10 @@ def show_definition(current_vocab: DataFrame):
 
 def _parse_option(opt):
     if "=" in opt:
-        return opt.split("=")[1]
+        parsed = opt.split("=")[1]
+        if parsed[-1] == "\\":
+            parsed = parsed[:-1]
+        return parsed
     else:
         return opt
 
