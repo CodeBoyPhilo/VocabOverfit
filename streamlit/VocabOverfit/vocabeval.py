@@ -34,28 +34,34 @@ def show_definition(current_vocab: DataFrame):
 
 
 def _parse_option(opt):
-    parsed = opt.split("=")[1]
-    if parsed[-1] == "\\":
-        parsed = parsed[:-1]
-    return parsed
+    if "=" in opt:
+        parsed = opt.split("=")[1]
+        if parsed[-1] == "\\":
+            parsed = parsed[:-1]
+        return parsed
+    else:
+        return opt
 
 
 def make_question():
-    vocab = session.ve_current_vocab["vocabulary"]
-    eq_idx = random.randint(1, 2)
+    match session.ve_choice_type:
+        case "Chinese":
+            choice = "ch_meaning"
+        case "equations":
+            eq_idx = random.randint(1, 2)
+            choice = f"equation_{eq_idx}"
+        case "random":
+            choice_type = random.randint(0, 1)
+            if choice_type == 0:
+                choice = "ch_meaning"
+            else:
+                eq_idx = random.randint(1, 2)
+                choice = f"equation_{eq_idx}"
 
-    session.ve_correct_opt = _parse_option(
-        session.ve_current_vocab[f"equation_{eq_idx}"]
-    )
-    session.ve_opt_1 = _parse_option(
-        session.ve_other_data.sample(1)[f"equation_{eq_idx}"].values[0]
-    )
-    session.ve_opt_2 = _parse_option(
-        session.ve_other_data.sample(1)[f"equation_{eq_idx}"].values[0]
-    )
-    session.ve_opt_3 = _parse_option(
-        session.ve_other_data.sample(1)[f"equation_{eq_idx}"].values[0]
-    )
+    session.ve_correct_opt = _parse_option(session.ve_current_vocab[choice])
+    session.ve_opt_1 = _parse_option(session.ve_other_data.sample(1)[choice].values[0])
+    session.ve_opt_2 = _parse_option(session.ve_other_data.sample(1)[choice].values[0])
+    session.ve_opt_3 = _parse_option(session.ve_other_data.sample(1)[choice].values[0])
     session.ve_options = [
         session.ve_correct_opt,
         session.ve_opt_1,
@@ -212,7 +218,7 @@ if "ve_first_q" not in session:
 if "ve_key_in_answer" not in session:
     session.ve_key_in_answer = ""
 if "ve_cmd" not in session:
-    session.ve_cmd = session.ve_key_in_answer
+    session.ve_cmd = ""
 # ==============================
 # MAIN APP EXECUTION STARTS HERE
 # ==============================
@@ -246,15 +252,25 @@ if session.vocab_list is not None:
         session.ve_first_q = True
         session.ve_cmd = ""
 
-session.ve_answer_mode = st.sidebar.radio("Answer Mode:", ["selection", "key-in"])
+with st.sidebar:
+    side_left, side_right = st.columns(2)
 
-if st.sidebar.button("**Start**", type="primary", use_container_width=True):
-    session.ve_start = True
+    with side_left:
+        session.ve_answer_mode = st.radio("Answer Mode:", ["selection", "key-in"])
+    with side_right:
+        session.ve_choice_type = st.radio(
+            "Choices:",
+            ["Chinese", "equations", "random"],
+            on_change=submit_key_in_answer,
+        )
 
-    session.ve_n_correct = 0
-    session.ve_n_finished = 0
-    session.ve_correct_rate_tracker = [0]
-    session.ve_cur_v_idx = 0
+    if st.button("**Start**", type="primary", use_container_width=True):
+        session.ve_start = True
+
+        session.ve_n_correct = 0
+        session.ve_n_finished = 0
+        session.ve_correct_rate_tracker = [0]
+        session.ve_cur_v_idx = 0
 
 if session.ve_start:
 
@@ -279,20 +295,30 @@ if session.ve_start:
         st.text_input(
             "Your answer:", "", key="ve_key_in_answer", on_change=submit_key_in_answer
         )
-        # session.ve_cmd = session.ve_key_in_answer
-        try:
-            session.ve_cmd = list(session.ve_cmd)[-1]
-        except Exception as e:
-            pass
+        ve_cmd = session.ve_cmd
 
-        if session.ve_cmd == ";":
+        if ve_cmd == ";":
             session.ve_cur_v_idx -= 1
             if session.ve_cur_v_idx < 0:
                 session.ve_cur_v_idx = 0
-        elif session.ve_cmd == "'":
+        elif ve_cmd == "'":
             if session.ve_cur_v_idx + 1 > session.ve_n_vocab:
                 session.ve_cur_v_idx = session.ve_n_vocab - 1
             session.ve_cur_v_idx += 1
+
+        # try:
+        #     session.ve_cmd = list(session.ve_cmd)[-1]
+        # except Exception as e:
+        #     pass
+
+        # if session.ve_cmd == ";":
+        #     session.ve_cur_v_idx -= 1
+        #     if session.ve_cur_v_idx < 0:
+        #         session.ve_cur_v_idx = 0
+        # elif session.ve_cmd == "'":
+        #     if session.ve_cur_v_idx + 1 > session.ve_n_vocab:
+        #         session.ve_cur_v_idx = session.ve_n_vocab - 1
+        #     session.ve_cur_v_idx += 1
 
     # Start revising
     if session.ve_cur_v_idx + 1 > session.ve_n_vocab:
