@@ -250,7 +250,7 @@ try:
     if "vr_key_in_answer" not in session:
         session.vr_key_in_answer = ""
     if "vr_cmd" not in session:
-        session.vr_cmd = session.vr_key_in_answer
+        session.vr_cmd = ""
 
     # ==============================
     # MAIN APP EXECUTION STARTS HERE
@@ -316,17 +316,14 @@ try:
                 key="vr_key_in_answer",
                 on_change=submit_key_in_answer,
             )
-            # session.vr_cmd = session.vr_key_in_answer
-            try:
-                session.vr_cmd = list(session.vr_cmd)[-1]
-            except Exception as e:
-                pass
 
-            if session.vr_cmd == ";":
+            vr_cmd = session.vr_cmd
+
+            if vr_cmd == ";":
                 session.vr_cur_v_idx -= 1
                 if session.vr_cur_v_idx < 0:
                     session.vr_cur_v_idx = 0
-            elif session.vr_cmd == "'":
+            elif vr_cmd == "'":
                 if session.vr_cur_v_idx + 1 > session.vr_n_vocab:
                     session.vr_cur_v_idx = session.vr_n_vocab - 1
                 session.vr_cur_v_idx += 1

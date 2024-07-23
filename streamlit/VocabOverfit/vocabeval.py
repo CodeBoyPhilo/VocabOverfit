@@ -292,8 +292,12 @@ if session.ve_start:
             session.ve_cur_v_idx += 1
 
     else:
+        st.write("**Your answer:**")
         st.text_input(
-            "Your answer:", "", key="ve_key_in_answer", on_change=submit_key_in_answer
+            "`v`: skip - `;`: previous - `'`: next",
+            "",
+            key="ve_key_in_answer",
+            on_change=submit_key_in_answer,
         )
         ve_cmd = session.ve_cmd
 
@@ -305,20 +309,6 @@ if session.ve_start:
             if session.ve_cur_v_idx + 1 > session.ve_n_vocab:
                 session.ve_cur_v_idx = session.ve_n_vocab - 1
             session.ve_cur_v_idx += 1
-
-        # try:
-        #     session.ve_cmd = list(session.ve_cmd)[-1]
-        # except Exception as e:
-        #     pass
-
-        # if session.ve_cmd == ";":
-        #     session.ve_cur_v_idx -= 1
-        #     if session.ve_cur_v_idx < 0:
-        #         session.ve_cur_v_idx = 0
-        # elif session.ve_cmd == "'":
-        #     if session.ve_cur_v_idx + 1 > session.ve_n_vocab:
-        #         session.ve_cur_v_idx = session.ve_n_vocab - 1
-        #     session.ve_cur_v_idx += 1
 
     # Start revising
     if session.ve_cur_v_idx + 1 > session.ve_n_vocab:
