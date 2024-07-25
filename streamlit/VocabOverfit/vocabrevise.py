@@ -245,8 +245,8 @@ try:
         session.vr_prev_mode = "NA"
     if "vr_cur_history" not in session:
         session.vr_cur_history = None
-    if "first_q" not in session:
-        session.first_q = True
+    if "vr_first_q" not in session:
+        session.vr_first_q = True
     if "vr_key_in_answer" not in session:
         session.vr_key_in_answer = ""
     if "vr_cmd" not in session:
@@ -265,7 +265,7 @@ try:
         with side_right:
             if session.vr_mode == "test":
                 session.vr_answer_mode = st.radio(
-                    "Answer Mode", ["selection", "key-in"]
+                    "**Answer Mode**", ["selection", "key-in"]
                 )
 
     data = pd.read_csv(DATA_DIR)
@@ -282,7 +282,7 @@ try:
         load_cur_history()
         session.vr_prev_vocab_list = session.vocab_list
         session.vr_cur_v_idx = 0
-        session.first_q = True
+        session.vr_first_q = True
         session.vr_cmd = ""
         session.vr_cur_v_idx = 0
         session.vr_n_correct = 0
@@ -364,9 +364,9 @@ try:
                 session.vr_current_vocab = session.vr_revise_data.iloc[
                     session.vr_cur_v_idx, :
                 ]
-                if session.first_q:
+                if session.vr_first_q:
                     make_question()
-                    session.first_q = False
+                    session.vr_first_q = False
                 if session.vr_prev_q_idx != session.vr_cur_v_idx:
                     session.vr_prev_q_idx = session.vr_cur_v_idx
                     make_question()
