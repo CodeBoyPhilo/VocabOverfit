@@ -219,6 +219,8 @@ if "ve_key_in_answer" not in session:
     session.ve_key_in_answer = ""
 if "ve_cmd" not in session:
     session.ve_cmd = ""
+if "ve_prev_choice_type" not in session:
+    session.ve_prev_choice_type = None
 # ==============================
 # MAIN APP EXECUTION STARTS HERE
 # ==============================
@@ -261,6 +263,7 @@ with st.sidebar:
         session.ve_choice_type = st.radio(
             "Choices:",
             ["Chinese", "equations", "random"],
+            key="choice_type",
             on_change=submit_key_in_answer,
         )
 
@@ -273,6 +276,10 @@ with st.sidebar:
         session.ve_cur_v_idx = 0
 
 if session.ve_start:
+
+    if session.ve_choice_type != session.ve_prev_choice_type:
+        session.ve_prev_choice_type = session.ve_choice_type
+        make_question()
 
     if session.ve_answer_mode == "selection":
 
