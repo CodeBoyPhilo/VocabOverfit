@@ -220,7 +220,7 @@ if "ve_key_in_answer" not in session:
 if "ve_cmd" not in session:
     session.ve_cmd = ""
 if "ve_prev_choice_type" not in session:
-    session.ve_prev_choice_type = None
+    session.ve_prev_choice_type = "Chinese"
 # ==============================
 # MAIN APP EXECUTION STARTS HERE
 # ==============================
