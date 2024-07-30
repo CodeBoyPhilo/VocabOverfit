@@ -114,7 +114,7 @@ if "start" not in session:
 # ==============================
 session.vocab_list = st.sidebar.selectbox(
     "**Select a vocabulary list**",
-    [f"list{i}" for i in range(1, 33)],
+    [f"list{i}" for i in range(1, 31)],
     label_visibility="visible",
 )
 
