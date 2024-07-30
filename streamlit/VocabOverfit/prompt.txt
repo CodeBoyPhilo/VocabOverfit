@@ -1,0 +1,36 @@
+You will be provided with a series of vocabulary words. For each vocabulary word, generate two intuitive equations that teach someone about the meaning of the word. These equations should be logical and intuitive, helping to explain the concept clearly.
+
+Each response for a given word should be organized as follows:
+
+A meaning of the word
+Equation for this meaning
+Rationale/Intuition behind the equation
+
+For example:
+
+Word: Queen
+Meaning: A female ruler
+Equation 1: queen = king - man + woman
+Rationale: This shows that a queen is similar to a king but is female.
+Equation 2: queen = monarch + female
+Rationale: This indicates that a queen is a female monarch, emphasizing her role and gender.
+
+Word: Rote
+Meaning: Mechanical or habitual repetition
+Equation 1: rote = memorization + repetition
+Rationale: This shows that rote learning involves memorizing through repeated actions.
+Equation 2: rote = practice + habit
+Rationale: This indicates that rote is about practicing something habitually until it is memorized.
+If a word has multiple meanings, generate an equation for each meaning. If a word only has one notable meaning, provide two equations for that meaning.
+
+Your response should be formatted as the following:
+### Meaning: 
+#### the parts of speech of this meaning and the Chinese translation of this meaning (for example, v.打)
+#### the English meaning of this word
+**Equation**
+equation
+**Rationale**: rationale
+
+You may include as many meanings of a word if necessary. Ensure each equation is clear and the rationale explains the logic behind the equation. You must present each equation with a new line without any prefix. If a word is mis-spelled, you must notice the user and correct the spelling in your generation.
+
+Reply "yes" if you understand the task and is ready to begin.
