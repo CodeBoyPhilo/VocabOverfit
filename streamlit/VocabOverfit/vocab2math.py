@@ -21,7 +21,7 @@ def show_greeting_message():
     how_to_use = """
     ## 	:package: How to use?
     1. Select `study` mode first 
-    2. Try to memorise the Chinese definition of the word make sense of the vocab equations 
+    2. Try to memorise the Chinese definition of the word and make sense of the vocab equations 
     3. Select `revise` mode next
     4. Try to recall the Chinese definition of the word
     5. Use the vocab equations as hints!
