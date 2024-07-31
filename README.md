@@ -12,7 +12,7 @@ This branch contains the try-it-out version of the apps that are deployed on Str
 
 `feat` branch
 
-This branch contains the full version of the apps that are updated frequently, however, not deployed yet due to the user profile feature. Since I have no software development experiments nor do I have any deployment experience, currently I have no clue how to manage and track user data on cloud. Therefore I decided to insulate the `feat` branch for anyone that wish to experience the full version to run it locally.
+This branch contains the full version of the apps that are updated frequently, however, not deployed on the cloud yet due to the additional user profile feature. Since I have no software development experiments nor do I have any deployment experience, currently I have no clue how to manage and track user data on cloud. Therefore I decided to insulate the `feat` branch for anyone that wish to experience the full version to run it locally.
 
 However, a packaged version distributing to PyPI and a docker image is coming soon for easy local deployment (as soon as I tested the app on different platform)
 
