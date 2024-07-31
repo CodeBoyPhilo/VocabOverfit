@@ -1,60 +1,52 @@
 # [:point_right: 中文版README :point_left:](README-ZH.md)
 
-> :warning: **AI Translation**: Some contents in this README file is AI translated with adaption.
+# VocabOverfit
 
-# Phi's GRE Prep Toolkit
+Welcome to `VocabOverfit`! This repo contains the streamlit apps that I casually devloped when preparing for my GRE exam.
 
-# 0.0
+**Structure**
 
-Welcome to Phi's GRE Prep Toolkit. This repo contains some python gadgets I developed to increase the efficiency of GRE test preparation.
-I will update this repo frequently to add some new gadgets I developed. 
+`main` branch
 
-# 1.0 What's In Here?
+This branch contains the try-it-out version of the apps that are deployed on Streamlit Community Cloud.
 
-## [VocabCloud](toolkit/VocabCloud/README.md)
-**Intro**
+`feat` branch
 
-VocabCloud is derived from the concepts of Node and Edge. It connects vocabularies that are of similar meaning, so that 'synonyms' or words that are similar  in meaning are eventually connected to form a vocabulary cloud that may help in memorisation/
-This is based on BERT, cosine similarity, Page Rank and Community Detection.
+This branch contains the full version of the apps that are updated frequently, however, not deployed yet due to the user profile feature. Since I have no software development experiments nor do I have any deployment experience, currently I have no clue how to manage and track user data on cloud. Therefore I decided to insulate the `feat` branch for anyone that wish to experience the full version to run it locally.
 
-**Motivation**
+However, a packaged version distributing to PyPI and a docker image is coming soon for easy local deployment (as soon as I tested the app on different platform)
 
-1. Because I often confuse words with similar meanings when memorising them
-2. Because I have found, personally, that after becoming familiar with some words of a certain meaning, memorising new words under this meaning becomes very difficult due to the "stereotyped memory" already formed, making the memorisation process of new words quite challenging.
+# What's In Here?
 
-## [Vocab2Math](toolkit/Vocab2Math/README.md)
-**Introduction**
+## Vocab2Math
 
-Inspired by the famous "Queen = King + Woman - Man" analogy, Vocab2Math aims to generate such an analogy for any input word. Through abstract addition and subtraction, it captures the essence of a vocabulary's meaning.
+[[try-it-out]](https://vocab2math.streamlit.app/)
 
-**Motivation**
-1. Merely memorising the meanings of words tends to be easily forgotten and does not facilitate a deep understanding.
-2. The formulaic abstract expression captures the underlying meanings of words more effectively, providing a more vivid expression of word meanings.
+The app that helps you study and revise the vocabularies.
 
-## [QuestionOverfit](toolkit/QuestionOverfit/README.md)
-[`CLI`](toolkit/QuestionOverfit/README.md)  [`Streamlit`](streamlit/QuestionOverfit/README.md)
+> [!TIP]
+> For any new vocabulary list, I recommend you to go through it at least twice. Select `Study` mode first and memorise the Chinese definition of the word, and try to make sense of the vocab equations. Select `Revise` mode next, try to recall the Chinese definition of the word, and use the vocab equations as the hints.
 
+## VocabEval
 
-**Introduction**
+[[try-it-out]](https://vocabeval.streamlit.app/)
 
-Randomly selecting questions from a question bank for practice and drilling, a process I humorously call "Question Overfitting".
-Currently, there are two versions available:
-1. The QuestionOverfit API included in the `toolkit` package, usable via command line.
-2. A web version deployed on the Streamlit Community Cloud.
+The app that evaluates your knowledge about the vocabularies.
 
-**Motivation**
-1. The current method of drilling is rather traditional, relying solely on PDF question banks and answers, which is vastly different from the actual exam method, lacking any sense of immersion.
-2. I have yet to find a GRE-related drilling and preparation software.
-3. Combining these points, I've used the question banks and answers at hand as a basis to develop QuestionOverfit.
+> [!NOTE]
+> The try-it-out version of the app only supports button-selection answer mode and vocab equations as the answer set. Please refer to the app under the `feat` branch for a full version of the app.
 
-# 2.0 Development Plan
+## VocabRevise
 
-1. Improve VocabCloud.
-2. Enhance QuestionOverfit.
-3. MockGRE
-   - Generate practice questions similar to real exam questions based on large language models.
-   - Generate a passage containing the input words based on large language models, to aid in the memorisation and understanding of words.
+The app that helps you revise for the ill-memorised vocabularies. The vocabularies appear here are those that you wrongly answered in `VocabEval`.
 
+> [!WARNING]
+> This app is only implemented in the `feat` branch
 
+# Acknowledgement
 
+The vocabulary details are adapted from [liurui39660/3000](https://github.com/liurui39660/3000) and 张巍老师GRE.
 
+The vocabulary equations are generated using ChatGPT-4o with Human-in-the-loop to maintai the quality of the equations.
+
+However, since the vocabularies come from two sources, there are cases of conflicts between the definitions and equations. If you encounter such cases or there appears to be errors in the presentation of the definitions/equations, please raise an **Issue** or email the author directly!
